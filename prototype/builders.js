@@ -186,7 +186,8 @@ function validateTemplate(e) {
 }
 
 /* ---------- spec summary (shared by review, project, supplier and admin views) ---------- */
-function specRows(p) {
+function specRows(p) { const rows = specRowsBase(p); if (p.design || S.brand.name) { const d = p.design; rows.push([tx('Brand & design concept', 'البراند وتصوّر التصميم'), `<bdi dir="auto">${esc(d ? d.name : S.brand.name)}</bdi> · ${L(STYLES.find(x => x.id === (d ? d.style : S.brand.style)))}${d ? ' · ' + L(pitem(d.item)) : ''} <span class="faint">(${tx('concept reference', 'مرجع مبدئي')})</span>`]); } return rows; }
+function specRowsBase(p) {
   const s = p.spec;
   if (p.id === 'p-nuts') return [
     [tx('Product', 'المنتج'), optLabels('nuts', s.nuts) + (s.nuts.length > 1 ? ` (${tx('mix', 'خلطة')}${s.mix ? ': ' + esc(s.mix) : ''})` : '')],
@@ -284,7 +285,7 @@ function builderView(route) {
   const B = BUILDERS[route]; const p = proj(B.pid); S.current = B.pid; const steps = B.steps; if (p.step >= steps.length) p.step = steps.length - 1;
   const st = steps[p.step]; const c = cat(p.cat);
   if (p.stage !== 'draft') return `<div class="wrap section">${crumbs([[tx('My projects', 'مشاريعي'), 'dashboard'], [L(p.title)]])}${emptyState('lock', tx('This request has been sent', 'الطلب ده اتبعت خلاص'), tx('Changes after sending go through a change request, so every supplier quotes the same version.', 'أي تعديل بعد الإرسال بيبقى عن طريق طلب تعديل، عشان كل الموردين يسعّروا نفس النسخة.'), `<button class="btn btn-primary" data-act="openProject" data-id="${p.id}" data-to="project-overview">${tx('Open project', 'افتح المشروع')}</button>`)}</div>`;
-  const side = `<aside class="builder-side"><div class="card" data-live="assist"></div>
+  const side = `<aside class="builder-side"><div class="card" data-live="assist"></div>${builderBrandCard(p)}
     ${p.id === 'p-nuts' ? `<div class="card"><h3 class="row">${ic('calc')} ${tx('Quantity', 'الكمية')}</h3><div style="margin-top:10px" data-live="nutsCalc"></div></div>
       <div class="card"><h3 class="row">${ic('file')} ${tx('Your quotes will separate', 'العروض هتفصل')}</h3><div data-live="scopeList" style="margin-top:8px"></div></div>
       <div class="card"><h3 class="row">${ic('wallet')} ${tx('Budget fit', 'مناسبة الميزانية')}</h3><p class="small muted" style="margin-top:6px">${tx('Shown only after real quotes arrive. Nawah does not estimate prices from the spec.', 'بتظهر بس بعد ما العروض الحقيقية توصل. نواة مش بتقدّر أسعار من المواصفات.')}</p></div>` : ''}

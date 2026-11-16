@@ -47,7 +47,7 @@ function initialState() {
     thread: 'sw1',
     sample: { status: 'none', supplier: null, packs: 3, eval: {}, notes: '', decidedOn: null },
     order: { milestone: 0, paid: [false, false], changes: [], issues: [], delivery: null, received: false },
-    uploads: [],
+    uploads: [], brand: { name: '', tagline: '', color: '', style: 'modern', seed: 0, saved: [] }, sampleBasket: [],
     notifs: [
       { id: 'n0', icon: 'sparkle', read: false, en: 'Welcome to Nawah. Your nuts project draft is ready to finish.', ar: 'أهلًا بيك في نواة. مسودة مشروع المكسرات جاهزة تكمّلها.', go: 'builder-nuts', t: TODAY }
     ],
@@ -254,7 +254,7 @@ function drawerNotifs() {
 
 /* ---------------- layout ---------------- */
 const NAV = {
-  buyer: [['home', 'Home', 'الرئيسية'], ['categories', 'Categories', 'الأقسام'], ['suppliers', 'Suppliers', 'الموردين'], ['dashboard', 'My projects', 'مشاريعي'], ['help', 'Help', 'المساعدة']],
+  buyer: [['home', 'Home', 'الرئيسية'], ['categories', 'Categories', 'الأقسام'], ['suppliers', 'Suppliers', 'الموردين'], ['studio', 'Brand studio', 'استوديو البراند'], ['dashboard', 'My projects', 'مشاريعي'], ['help', 'Help', 'المساعدة']],
   supplier: [['supplier-home', 'Overview', 'نظرة عامة'], ['supplier-rfqs', 'Matching RFQs', 'الطلبات المناسبة'], ['supplier-profile', 'Company profile', 'ملف الشركة'], ['help', 'Help', 'المساعدة']],
   admin: [['admin-home', 'Overview', 'نظرة عامة'], ['admin-suppliers', 'Supplier review', 'مراجعة الموردين'], ['admin-requests', 'Requests & matching', 'الطلبات والترشيح'], ['admin-templates', 'Templates', 'القوالب'], ['help', 'Help', 'المساعدة']]
 };
@@ -310,7 +310,7 @@ function render(keepScroll) {
 }
 function refreshPartials() { document.querySelectorAll('[data-live]').forEach(el => { const f = PARTIALS[el.dataset.live]; if (f) el.innerHTML = f(); }); }
 function go(route) { if (location.hash.slice(1) === route) render(); else location.hash = route; }
-window.addEventListener('hashchange', () => { ERRORS = {}; render(); });
+window.addEventListener('hashchange', () => { ERRORS = {}; if (S.langChosen) document.getElementById('overlay').innerHTML = ''; render(); });
 
 function openLangGate() {
   openModal(`<div class="lang-gate">${logo(52)}<div><h2>Nawah · نواة</h2><p class="muted" style="margin-top:6px">Choose your language · اختر اللغة</p></div>

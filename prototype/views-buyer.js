@@ -75,6 +75,9 @@ VIEWS.home = () => {
     </div>
   </div></section>
 
+  <section class="section-tight"><div class="wrap"><div class="card" style="padding:24px"><div class="row-between"><div><h2>${tx('See your brand on real product shapes', 'شوف البراند بتاعك على شكل المنتج')}</h2><p class="muted small" style="margin-top:4px">${tx('Type your brand name and preview it on pouches, bottles, jars, shirts and furniture tags.', 'اكتب اسم البراند وشوفه على الأكياس والعبوات والبرطمانات والتيشيرتات وتاجات الأثاث.')}</p></div><a class="btn btn-primary" href="#studio">${ic('wand')} ${tx('Open brand studio', 'افتح استوديو البراند')}</a></div>
+    <div class="pf-grid" style="margin-top:16px">${['nuts-pouch', 'dish', 'shampoo', 'tshirt', 'honey', 'dining'].map(id => portfolioCard(pitem(id))).join('')}</div></div></div></section>
+
   <section class="section-tight"><div class="wrap">
     <h2 style="margin-bottom:16px">${tx('Try a guided builder', 'جرّب نموذج مواصفات')}</h2>
     <div class="grid g3">${[
@@ -183,7 +186,8 @@ VIEWS.category = route => {
   <h2 style="margin:28px 0 12px">${tx('Subcategories', 'الأقسام الفرعية')}</h2>
   <div class="grid g4" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">${c.subs.map(s => `<button class="card row" style="text-align:start;cursor:pointer" data-act="openSub" data-cat="${c.id}" data-sub="${s.id}"><span class="grow"><b>${L(s)}</b><span class="faint" style="display:block">${s.builder ? (s.builder === 'builder-custom' ? tx('Template form', 'نموذج من قالب') : tx('Guided builder', 'نموذج موجّه')) : tx('Request via general form', 'طلب بالنموذج العام')}</span></span>${s.builder && s.builder !== 'builder-custom' ? `<span class="pill brand">${ic('sparkle')}</span>` : ''}${ic('chev', 'flip')}</button>`).join('')}</div>
 
-  ${c.filters.length ? `<div class="layout-side" style="margin-top:32px"><aside class="card filters"><h3>${tx('Filter suppliers', 'فلترة الموردين')}</h3>
+  ${portfolioSection(c.id)}
+  ${c.filters.length ? `<h2 style="margin-top:32px">${tx('Suppliers in this category', 'موردين القسم ده')}</h2><div class="layout-side" style="margin-top:12px"><aside class="card filters"><h3>${tx('Filter suppliers', 'فلترة الموردين')}</h3>
     ${c.filters.map((f, i) => `<label class="switch"><input type="checkbox" data-act-change="catFilter" data-cat="${c.id}" data-i="${i}" ${active.includes(i) ? 'checked' : ''}><span class="small">${L(f)}</span></label>`).join('')}
     <p class="faint">${tx('Filters use what suppliers declared in their profile. Nawah checks documents, not every capability claim.', 'الفلاتر بتعتمد على اللي المورد كتبه في ملفه. نواة بتراجع المستندات، مش كل إمكانية مكتوبة.')}</p></aside>
     <div class="stack">${active.length ? `<div class="note">${ic('info')}<span>${tx(`${active.length} filter(s) applied, based on declared capabilities and uploaded certificates.`, `تم تطبيق ${active.length} فلتر، حسب الإمكانيات المعلنة والشهادات المرفوعة.`)}</span></div>` : ''}
@@ -249,6 +253,8 @@ VIEWS.dashboard = () => {
         ${S.notifs.slice(0, 4).map(n => `<div class="assist-item">${ic(n.icon)}<span>${L(n)}</span></div>`).join('')}</div>
       <div class="card"><div class="card-head"><h3>${tx('Saved suppliers', 'موردين محفوظين')}</h3></div>
         ${S.saved.length ? S.saved.map(id => `<div class="row" style="padding:6px 0">${supLogo(sup(id))}<span class="grow small"><b>${L(sup(id))}</b><br><span class="faint">${L(sup(id).gov)}</span></span></div>`).join('') : `<p class="faint">${tx('Nothing saved yet.', 'لسه مفيش حاجة محفوظة.')}</p>`}</div>
+      <div class="card"><div class="card-head"><h3>${tx('Sample requests', 'طلبات العينات')}</h3><a class="btn btn-ghost btn-sm" href="#studio">${tx('Studio', 'الاستوديو')}</a></div>
+        ${S.sampleBasket.length ? S.sampleBasket.map(r => `<div class="row" style="padding:6px 0;align-items:flex-start"><div style="width:52px;flex:none">${mockup(pitem(r.item), r.style)}</div><span class="grow small"><b>${L(pitem(r.item))}</b><br><span class="faint">${L(sup(r.sup))} · ${fdate(r.at)}</span><br><span class="pill info">${tx('Requested (demo)', 'مطلوبة (تجريبي)')}</span></span></div>`).join('') : `<p class="faint">${tx('Request samples from any portfolio item.', 'اطلب عينات من أي منتج في المعرض.')}</p>`}</div>
       <div class="card"><h3>${tx('Need help?', 'محتاج مساعدة؟')}</h3><p class="small muted" style="margin:6px 0 12px">${tx('Report a problem on any project or ask the operations team.', 'بلّغ عن مشكلة في أي مشروع أو اسأل فريق التشغيل.')}</p><button class="btn btn-secondary btn-sm" data-act="issue">${ic('flag')} ${tx('Report an issue', 'بلّغ عن مشكلة')}</button></div>
     </aside>
   </div></div>
