@@ -254,7 +254,7 @@ function drawerNotifs() {
 
 /* ---------------- layout ---------------- */
 const NAV = {
-  buyer: [['home', 'Home', 'الرئيسية'], ['categories', 'Categories', 'الأقسام'], ['suppliers', 'Suppliers', 'الموردين'], ['studio', 'Brand studio', 'استوديو البراند'], ['dashboard', 'My projects', 'مشاريعي'], ['help', 'Help', 'المساعدة']],
+  buyer: [['home', 'Home', 'الرئيسية'], ['categories', 'Categories', 'الأقسام'], ['suppliers', 'Suppliers', 'الموردين'], ['studio', 'Brand studio', 'استوديو البراند'], ['launch', 'Pricing', 'التسعير'], ['dashboard', 'My projects', 'مشاريعي'], ['help', 'Help', 'المساعدة']],
   supplier: [['supplier-home', 'Overview', 'نظرة عامة'], ['supplier-rfqs', 'Matching RFQs', 'الطلبات المناسبة'], ['supplier-profile', 'Company profile', 'ملف الشركة'], ['help', 'Help', 'المساعدة']],
   admin: [['admin-home', 'Overview', 'نظرة عامة'], ['admin-suppliers', 'Supplier review', 'مراجعة الموردين'], ['admin-requests', 'Requests & matching', 'الطلبات والترشيح'], ['admin-templates', 'Templates', 'القوالب'], ['help', 'Help', 'المساعدة']]
 };

@@ -78,6 +78,8 @@ VIEWS.home = () => {
   <section class="section-tight"><div class="wrap"><div class="card" style="padding:24px"><div class="row-between"><div><h2>${tx('See your brand on real product shapes', 'شوف البراند بتاعك على شكل المنتج')}</h2><p class="muted small" style="margin-top:4px">${tx('Type your brand name and preview it on pouches, bottles, jars, shirts and furniture tags.', 'اكتب اسم البراند وشوفه على الأكياس والعبوات والبرطمانات والتيشيرتات وتاجات الأثاث.')}</p></div><a class="btn btn-primary" href="#studio">${ic('wand')} ${tx('Open brand studio', 'افتح استوديو البراند')}</a></div>
     <div class="pf-grid" style="margin-top:16px">${['nuts-pouch', 'dish', 'shampoo', 'tshirt', 'honey', 'dining'].map(id => portfolioCard(pitem(id))).join('')}</div></div></div></section>
 
+  <section class="section-tight"><div class="wrap"><div class="card row-between" style="padding:24px"><div class="grow" style="min-width:240px"><h2>${tx('Know your numbers before you produce', 'اعرف أرقامك قبل ما تصنّع')}</h2><p class="muted small" style="margin-top:4px">${tx('Raw material, packaging, printing and transport cost per unit, a recommended price for every sales channel, offers you can afford, and how to stand out.', 'تكلفة الخامة والتغليف والطباعة والنقل لكل وحدة، سعر مقترح لكل قناة بيع، عروض تقدر عليها، وإزاي تبقى مختلف.')}</p></div><a class="btn btn-primary" href="#launch">${ic('calc')} ${tx('Open pricing & launch kit', 'افتح التسعير وخطة الإطلاق')}</a></div></div></section>
+
   <section class="section-tight"><div class="wrap">
     <h2 style="margin-bottom:16px">${tx('Try a guided builder', 'جرّب نموذج مواصفات')}</h2>
     <div class="grid g3">${[

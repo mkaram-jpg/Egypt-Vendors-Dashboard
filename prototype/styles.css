@@ -428,4 +428,24 @@ footer.site a { color: var(--ink-2); }
 .swatch-btn .icon { width: 13px; height: 13px; }
 .swatch-btn[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--brand); }
 @media (max-width: 720px) { .studio-grid { grid-template-columns: minmax(0, 1fr); } .studio-big { max-height: 340px; aspect-ratio: auto; } }
+
+/* pricing & launch — categorical series validated (light + dark) */
+:root { --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #0ca30c; } }
+:root[data-theme="dark"] { --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #0ca30c; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.stackbar { display: flex; gap: 2px; height: 22px; border-radius: 4px; overflow: hidden; }
+.stackbar span { min-width: 3px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: .8rem; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.econ-in { width: 104px; text-align: end; padding: 6px 8px; margin-inline-start: auto; display: block; }
+.mband { position: relative; padding-top: 6px; }
+.mtrack { position: relative; height: 14px; background: var(--surface-2); border-radius: 7px; direction: ltr; }
+.mtrack .seg { position: absolute; top: 0; bottom: 0; background: color-mix(in srgb, var(--ink-3) 30%, var(--surface-2)); }
+.mtrack .seg.s2 { background: color-mix(in srgb, var(--ink-3) 50%, var(--surface-2)); }
+.mtrack .mk { position: absolute; top: -5px; width: 4px; height: 24px; border-radius: 2px; transform: translateX(-2px); }
+.mtrack .mk.cost { background: var(--ink-3); }
+.mtrack .mk.you { background: var(--brand); box-shadow: 0 0 0 2px var(--surface); }
+.mlabels { position: relative; height: 34px; margin-top: 6px; direction: ltr; font-size: .74rem; color: var(--ink-2); }
+.mlabels span { position: absolute; transform: translateX(-50%); text-align: center; white-space: nowrap; line-height: 1.3; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

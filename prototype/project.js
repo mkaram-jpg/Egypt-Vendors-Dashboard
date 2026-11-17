@@ -30,10 +30,10 @@ function quoteLabels() {
 const labelPills = (arr) => arr.map(l => `<span class="pill ${l[0]}" title="${esc(l[2])}">${l[1]}</span>`).join('');
 
 /* ---------- workspace shell ---------- */
-const PTABS = [['project-overview', 'Overview', 'نظرة عامة'], ['project-quotes', 'Quotations', 'العروض'], ['project-compare', 'Compare', 'المقارنة'], ['project-messages', 'Messages', 'الرسائل'], ['project-samples', 'Samples', 'العينات'], ['project-order', 'Order & payments', 'الطلب والمدفوعات'], ['project-docs', 'Documents', 'المستندات']];
+const PTABS = [['project-overview', 'Overview', 'نظرة عامة'], ['project-quotes', 'Quotations', 'العروض'], ['project-compare', 'Compare', 'المقارنة'], ['project-messages', 'Messages', 'الرسائل'], ['project-samples', 'Samples', 'العينات'], ['project-order', 'Order & payments', 'الطلب والمدفوعات'], ['project-launch', 'Pricing & launch', 'التسعير والإطلاق'], ['project-docs', 'Documents', 'المستندات']];
 function wsShell(route, title, body) {
   const p = proj(); const full = p.id === 'p-nuts';
-  const tabs = full ? PTABS : PTABS.filter(t => ['project-overview', 'project-docs'].includes(t[0]));
+  const tabs = full ? PTABS : PTABS.filter(t => ['project-overview', 'project-launch', 'project-docs'].includes(t[0]));
   const counts = { 'project-quotes': S.quotesArrived ? Object.keys(S.quotes).length : 0, 'project-messages': 0 };
   return `<div class="wrap section">
   ${crumbs([[tx('My projects', 'مشاريعي'), 'dashboard'], [L(p.title), 'project-overview'], [title]])}
