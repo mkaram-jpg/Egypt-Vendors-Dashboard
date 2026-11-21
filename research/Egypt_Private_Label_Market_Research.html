@@ -1,0 +1,714 @@
+<title>Egypt Private Label Feasibility</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: consulting due-diligence report — one reading column with wide tables in their own scroll boxes; the financial model is an interactive workbench section. */
+:root {
+  --bg: #F6F7F9; --paper: #FFFFFF; --panel: #EEF1F4; --line: #D8DEE5; --ink: #111A24; --ink-2: #44515F; --ink-3: #6B7785;
+  --accent: #0E5A4B; --accent-soft: #E1EEEA; --gold: #A86F0C;
+  --ok: #1D7A4B; --ok-soft: #E2F2E9; --warn: #8F5300; --warn-soft: #FBEFD9; --bad: #AE2A31; --bad-soft: #FBE5E6; --info: #24539E; --info-soft: #E4ECFA;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300;
+  --f-head: "Space Grotesk", system-ui, sans-serif; --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0E1318; --paper: #151C23; --panel: #1C252E; --line: #2B3641; --ink: #E7EDF2; --ink-2: #AAB6C2; --ink-3: #808D9A; --accent: #56B89F; --accent-soft: #173830; --gold: #E3AE4C;
+  --ok: #55C48E; --ok-soft: #15322A; --warn: #E8AA52; --warn-soft: #3A2B12; --bad: #F2787E; --bad-soft: #3D1B1E; --info: #82AAF0; --info-soft: #1A2742;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #0ca30c; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0E1318; --paper: #151C23; --panel: #1C252E; --line: #2B3641; --ink: #E7EDF2; --ink-2: #AAB6C2; --ink-3: #808D9A; --accent: #56B89F; --accent-soft: #173830; --gold: #E3AE4C;
+  --ok: #55C48E; --ok-soft: #15322A; --warn: #E8AA52; --warn-soft: #3A2B12; --bad: #F2787E; --bad-soft: #3D1B1E; --info: #82AAF0; --info-soft: #1A2742;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #0ca30c; color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.6; margin: 0; }
+.page { max-width: 1120px; margin: 0 auto; padding-block: 28px 60px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3, h4 { font-family: var(--f-head); line-height: 1.2; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 { font-size: clamp(1.9rem, 1.3rem + 2.4vw, 2.9rem); }
+h2 { font-size: clamp(1.35rem, 1.15rem + .8vw, 1.75rem); margin-top: 8px; }
+h3 { font-size: 1.1rem; margin: 22px 0 8px; }
+p { margin: 0 0 10px; max-width: 75ch; }
+a { color: var(--accent); }
+.num, td.n, th.n { font-variant-numeric: tabular-nums; }
+td.n, th.n { text-align: right; white-space: nowrap; }
+.mono { font-family: var(--f-mono); font-size: .85em; }
+.muted { color: var(--ink-2); } .faint { color: var(--ink-3); font-size: .85rem; }
+.eyebrow { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+section.sec { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; margin-top: 20px; min-width: 0; }
+@media (max-width: 640px) { section.sec { padding: 20px 16px; } }
+.sec-num { font-family: var(--f-mono); color: var(--accent); font-size: .85rem; }
+.cover { padding: 36px 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; border-top: 6px solid var(--accent); }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 16px; font-size: .88rem; color: var(--ink-2); }
+.toc { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 6px 18px; margin-top: 18px; font-size: .9rem; }
+.toc a { text-decoration: none; color: var(--ink-2); } .toc a:hover { color: var(--accent); }
+.callout { border-radius: 10px; padding: 14px 16px; margin: 12px 0; font-size: .92rem; background: var(--info-soft); }
+.callout.warn { background: var(--warn-soft); } .callout.ok { background: var(--ok-soft); } .callout.bad { background: var(--bad-soft); }
+.callout b:first-child { display: block; margin-bottom: 4px; }
+.grid { display: grid; gap: 14px; } .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 860px) { .g3, .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .g2, .g3, .g4 { grid-template-columns: minmax(0, 1fr); } }
+.kpi { background: var(--panel); border-radius: 10px; padding: 14px; min-width: 0; }
+.kpi .v { font-family: var(--f-head); font-size: 1.45rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.kpi .l { font-size: .8rem; color: var(--ink-2); }
+.tw { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; margin: 10px 0 6px; }
+table { border-collapse: collapse; width: 100%; font-size: .84rem; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { background: var(--panel); font-weight: 600; font-size: .76rem; color: var(--ink-2); position: sticky; top: 0; }
+tr:last-child td { border-bottom: 0; }
+tr.tot td { background: var(--accent-soft); font-weight: 700; }
+.tag { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: .7rem; font-weight: 700; white-space: nowrap; }
+.t-v { background: var(--ok-soft); color: var(--ok); } .t-r { background: var(--info-soft); color: var(--info); } .t-e { background: var(--warn-soft); color: var(--warn); } .t-a { background: var(--bad-soft); color: var(--bad); }
+.conf-H { color: var(--ok); font-weight: 700; } .conf-M { color: var(--warn); font-weight: 700; } .conf-L { color: var(--bad); font-weight: 700; }
+ul, ol { padding-left: 20px; margin: 6px 0 10px; } li { margin: 3px 0; max-width: 75ch; }
+.inputs { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; margin: 10px 0; }
+.inputs label { display: flex; flex-direction: column; gap: 4px; font-size: .78rem; color: var(--ink-2); font-weight: 600; }
+input[type=number], select { font: inherit; font-size: .88rem; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); width: 100%; min-width: 0; }
+input[type=number]:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+td input[type=number] { width: 84px; padding: 4px 6px; text-align: right; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.seg button { font: inherit; font-size: .85rem; padding: 7px 14px; border: 0; background: var(--paper); color: var(--ink-2); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; font-weight: 600; }
+:root[data-theme="dark"] .seg button[aria-pressed="true"] { color: #06201A; }
+button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.chart { width: 100%; height: auto; display: block; }
+.chart text { fill: var(--ink-2); font-size: 11px; font-family: var(--f-body); }
+.chart .grid line { stroke: var(--line); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; color: var(--ink-2); margin: 6px 0; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.wf { display: flex; gap: 2px; height: 26px; border-radius: 4px; overflow: hidden; margin: 8px 0 4px; }
+.wf span { min-width: 2px; }
+.badge-go { font-weight: 700; } .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: .75rem; font-weight: 700; }
+.pill.ok { background: var(--ok-soft); color: var(--ok); } .pill.warn { background: var(--warn-soft); color: var(--warn); } .pill.bad { background: var(--bad-soft); color: var(--bad); }
+.small { font-size: .82rem; }
+details summary { cursor: pointer; font-weight: 600; }
+.foot { margin-top: 26px; font-size: .8rem; color: var(--ink-3); }
+.investor-only { display: none; }
+body.investor .full-only { display: none !important; }
+body.investor .investor-only { display: block; }
+@media print {
+  html { font-size: 11px; } body { background: #fff; font-size: 11px; } .page { max-width: none; padding: 0; }
+  td .faint, td.small, td .small, td .tag { font-size: 7.5px; } h3 { font-size: 13px; } h1 { font-size: 26px; }
+  section.sec, .cover { border: 0; border-radius: 0; padding: 6px 0; margin-top: 0; break-inside: auto; }
+  section.sec { break-before: page; } #exec { break-before: auto; } .noprint { display: none !important; }
+  th { position: static; } .tw { overflow: visible; border: 0; } a { color: inherit; text-decoration: none; }
+  table { font-size: 8px; } th, td { padding: 4px 5px; } td.n, th.n { white-space: normal; } td input[type=number] { width: 50px; font-size: 8px; padding: 2px 3px; border: 0; }
+  h2 { font-size: 18px; } .kpi .v { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="page" id="top">
+
+<header class="cover">
+  <p class="eyebrow">Commercial due-diligence study · Egypt · FMCG private label</p>
+  <h1 class="full-only">Egypt Private Label Market Research &amp; Business Feasibility</h1>
+  <h1 class="investor-only">Private Label Investment Business Case — Egypt</h1>
+  <p class="muted" style="margin-top:12px;font-size:1.02rem">Can we source, brand and supply private-label grocery and home-care products to Egyptian supermarkets, hypermarkets, regional chains and independent grocers, and where should we invest first?</p>
+  <div class="meta"><span><b>Research date:</b> 21 Nov 2026</span><span><b>Currency:</b> EGP (VAT shown separately)</span><span><b>Status:</b> Desk research + transparent bottom-up model — pre-RFQ</span></div>
+  <div class="callout warn" style="margin-top:16px"><b>Read this first: research basis and limits</b>
+    This study uses web research run on 21 Nov 2026 through a search engine. Direct page fetching from this research environment was blocked, so every figure below comes from dated search results, official averages reported in the press, or retailer listing snippets. Retailer listing prices are often <b>undated</b> and must be re-checked in store. <b>No supplier quotations were obtained.</b> Every factory cost is a labelled bottom-up estimate that needs an RFQ. Branch counts used in profitability scenarios are hypothetical. Each number carries a tag: <span class="tag t-v">VERIFIED</span> dated primary or official source · <span class="tag t-r">REPORTED</span> press or retailer listing, possibly undated · <span class="tag t-e">ESTIMATE</span> bottom-up calculation · <span class="tag t-a">ASSUMPTION</span> analyst input to validate.</div>
+  <nav class="toc full-only noprint" aria-label="Contents">
+    <a href="#exec">Executive summary</a><a href="#s1">1 · Retail landscape</a><a href="#s2">2 · Governorate opportunity</a><a href="#s3">3 · Price benchmark</a><a href="#s4">4 · Manufacturing &amp; sourcing</a><a href="#s5">5 · Unit economics</a><a href="#s6">6 · Commercial strategy</a><a href="#s7">7 · Retailer simulations</a><a href="#s8">8 · Financial model</a><a href="#s9">9 · Global benchmarks</a><a href="#s10">10 · Risks &amp; regulation</a><a href="#s11">11 · Entry plan &amp; 90 days</a><a href="#s12">12 · Investment case</a><a href="#evidence">Evidence register</a><a href="#sources">Sources</a>
+  </nav>
+</header>
+
+<!-- ===================== EXECUTIVE SUMMARY ===================== -->
+<section class="sec" id="exec">
+  <p class="eyebrow">Executive summary</p>
+  <h2>Home care carries the margin, staples carry the traffic, and working capital is the binding constraint</h2>
+  <div class="grid g4" style="margin-top:16px" id="exec-kpis"></div>
+  <h3>Key findings</h3>
+  <ol>
+    <li><b>The market is large but still mostly traditional.</b> Small local grocers hold roughly 60% of food retail (over US$13 bn), per the USDA FAS Retail Foods report. Supermarkets and hypermarkets are cited at about 26% of sales. Modern chains are expanding fast at the discount end: BIM had 445 stores at end-2025 and targets 1,000 by end-2026, and Kazyon reportedly has more than 1,000 stores. <span class="tag t-v">VERIFIED</span>/<span class="tag t-r">REPORTED</span></li>
+    <li><b>Commodity staples cannot fund a private-label business on their own.</b> Packed sugar averaged about 35.68 EGP/kg on 16 Nov 2026, while Ministry of Supply initiative outlets sold it at 25 EGP. With bulk sugar estimated at about 24 EGP/kg, our modelled gross margin on a 1 kg own-brand pack is only about 4–5% after a 10% retailer margin. Rice is about 8%. <span class="tag t-e">ESTIMATE</span></li>
+    <li><b>Home and personal care is where private-label economics work.</b> Branded reference prices are high: Persil gel 1 L at 102.50 EGP, Pril 1 L about 60–69 EGP, Lux 115 g at 25.99 EGP. A private label priced 25–35% below the brand can still leave the retailer a 25% margin and us an estimated 16–31% gross margin. <span class="tag t-r">REPORTED</span> prices · <span class="tag t-e">ESTIMATE</span> costs</li>
+    <li><b>Contract manufacturing capacity exists.</b> Several Egyptian home-care factories publicly describe private-label or contract services, including ADCO, Scitra, Greenline and Madar. None is yet qualified by us, so each needs an RFQ, a site audit and samples.</li>
+    <li><b>Working capital, not margin, decides feasibility.</b> Egyptian B2B contracts typically set 30–60 day terms, but actual payment runs 60–90+ days (Allianz Trade). With the central bank's overnight lending rate at 21% (29 Oct 2026), financing receivables is expensive. In the base case the model needs a peak funding of <b id="ex-peak">—</b> before it turns cash-positive.</li>
+    <li><b>Start with Private Label as a Service (Model B) for regional chains</b> using contract manufacturing (Model A sourcing). Retailers own the brand and carry part of the demand risk, and a setup fee funds development. Launch our own consumer brand (Opportunity A) only after 6–12 months of sell-through data.</li>
+  </ol>
+  <h3>Recommendation</h3>
+  <div class="callout ok"><b>Conditional GO for a 90-day validation pilot. Not yet a GO for full investment.</b>
+    Run a pilot with 2–3 regional chains (5–25 branches each) and 5–6 SKUs, led by home care: dishwashing liquid 1 L and 500 ml, laundry liquid 1 L, floor cleaner 1 L and liquid hand soap 500 ml. Add rice 1 kg as a price-entry staple. Supply sugar only as a fee-based service for retailers that want a price-entry SKU, never as our own-brand margin product. Before committing growth capital, hit the go/no-go criteria in Section 12.</div>
+  <div class="investor-only" id="inv-extra"></div>
+</section>
+
+<!-- ===================== 1 RETAIL LANDSCAPE ===================== -->
+<section class="sec full-only" id="s1">
+  <p class="sec-num">01</p><h2>Egyptian retail landscape</h2>
+  <p class="muted">Store counts were verified where a dated source exists. Many chains publish no current figure, and those gaps are left visible rather than filled.</p>
+  <h3>Market structure</h3>
+  <div class="grid g3">
+    <div class="kpi"><div class="v">~60%</div><div class="l">Food-retail share of small local grocers (&gt;US$13 bn) — USDA FAS, EG2024-0024 <span class="tag t-r">REPORTED</span></div></div>
+    <div class="kpi"><div class="v">~26%</div><div class="l">Share of supermarkets and hypermarkets — Bank of Scotland trade guide <span class="tag t-r">REPORTED</span></div></div>
+    <div class="kpi"><div class="v">109.5 M</div><div class="l">Domestic population, 19 Sep 2026 (CAPMAS clock) <span class="tag t-v">VERIFIED</span></div></div>
+  </div>
+  <h3>National and major chains</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Retailer (owner)</th><th>Format</th><th class="n">Stores</th><th>As of · source</th><th>Conf.</th><th>Private label evidence</th><th>Supply opportunity</th></tr></thead>
+    <tbody id="chain-table"></tbody></table></div>
+  <p class="faint">Not found in this research and needed before any pitch: published private-label penetration by retailer, listing fees, rebate structures and supplier onboarding manuals. None is public, so they must come from buyer interviews. Commercial terms below are deliberately <b>not</b> stated as facts.</p>
+  <h3>What we know about commercial terms</h3>
+  <ul>
+    <li><b>Payment terms:</b> contractual credit is usually 30–60 days, but actual settlement often stretches to 60–90 days or longer, and late payment is common (Allianz Trade, Egypt collection profile). <span class="tag t-r">REPORTED</span> · not retailer-specific.</li>
+    <li><b>Listing fees, rebates, retailer margins:</b> no public source was found. The model uses <span class="tag t-a">ASSUMPTION</span> retailer margins of 10–12% on staples and 25% on home care, plus a 3% back-margin rebate. Validate both in buyer interviews.</li>
+    <li><b>Carrefour Egypt</b> planned to introduce over 1,000 private-label SKUs in 2024 and states that 99% of its supply chain is locally sourced. That makes it a credible but demanding target: expect audits and food-safety standards. <span class="tag t-r">REPORTED</span> company claims.</li>
+    <li><b>Private-label acceptance:</b> an older Nielsen study reports that 73% of Egyptian respondents think store-brand quality has improved. A 2018 Nielsen deck shows the top 5 categories make up 63% of private-label sales. McKinsey (2026) finds private-label penetration below 10% in four of five MENA markets. Together these point to early-stage but rising acceptance. <span class="tag t-r">REPORTED</span></li>
+  </ul>
+</section>
+
+<!-- ===================== 2 GOVERNORATES ===================== -->
+<section class="sec full-only" id="s2">
+  <p class="sec-num">02</p><h2>Governorate-level opportunity</h2>
+  <p>Regional chains are the better first door. They typically have shorter decision chains, flexible assortments, no in-house private-label teams, and less buying power to impose long payment terms or high listing fees. That last point is a hypothesis to test in interviews.</p>
+  <div class="callout"><b>How the score works</b>Score = 30% market size + 20% purchasing power + 20% distribution access from Greater Cairo and 10th of Ramadan + 15% modern-retail presence + 15% competitive intensity (inverted). Population is shown where a dated figure was found. All other sub-scores (1–5) are <b>analyst judgements</b> <span class="tag t-a">ASSUMPTION</span>, to be replaced by CAPMAS yearbook data, retailer interviews and distributor quotes.</div>
+  <div class="tw"><table><thead><tr><th>Governorate</th><th class="n">Population</th><th class="n">Size</th><th class="n">Purch. power</th><th class="n">Access</th><th class="n">Modern retail</th><th class="n">Competition (inv.)</th><th class="n">Score</th><th>Wave</th><th>Notes</th></tr></thead><tbody id="gov-table"></tbody></table></div>
+  <h3>Regional retailers and partners to approach</h3>
+  <ul>
+    <li><b>Alexandria and Beheira:</b> Fathalla (multi-branch in Alexandria, Beheira and Matrouh per directories; no verified count), Zahran (expanded by acquiring Alfa Market stores, EnterpriseAM, Sep 2023), Gomla-format markets.</li>
+    <li><b>Greater Cairo:</b> Awlad Ragab (about 40 branches cited, undated), Seoudi (22 branches per an undated profile), independent multi-branch supermarkets in Nasr City, Maadi, October and Obour.</li>
+    <li><b>Upper Egypt:</b> Kheir Zaman (Mansour Group; about 38 outlets, undated, including Qena) and Kazyon's national footprint. Wholesalers in Assiut and Sohag are the practical route to independent grocers.</li>
+    <li><b>Independents (about 60% of the market):</b> reach them through 2–3 regional wholesalers or distributors, not direct store delivery. Distributor margins are an <span class="tag t-a">ASSUMPTION</span> to collect.</li>
+  </ul>
+</section>
+
+<!-- ===================== 3 PRICE BENCHMARK ===================== -->
+<section class="sec full-only" id="s3">
+  <p class="sec-num">03</p><h2>Product pricing benchmark</h2>
+  <p>Retail prices include VAT where applicable. Under VAT Law 67/2016, <b>sugar is exempt</b>; <b>macaroni is exempt except when made with semolina</b>; vegetable oils fall under a schedule tax; standard 14% VAT applies to home and personal care. Rice treatment was not confirmed in this research, so the model assumes 0% and flags it.</p>
+  <div class="tw"><table><thead><tr><th>Product</th><th>Brand / basis</th><th>Size</th><th>Retailer / source</th><th class="n">Price EGP</th><th class="n">Per std unit</th><th>Observed</th><th>Type</th></tr></thead><tbody id="price-table"></tbody></table></div>
+  <h3>Staples: lowest, median and highest reference prices</h3>
+  <div class="tw"><table><thead><tr><th>Product (std unit)</th><th class="n">Low</th><th class="n">Median</th><th class="n">High</th><th>Basis</th></tr></thead><tbody id="lmh-table"></tbody></table></div>
+  <p class="faint">Gaps that need a store check (planned for Days 1–30): brand-by-brand prices across Carrefour, Kazyon, BIM, Metro, Spinneys and Seoudi for sugar, rice, pasta, lentils, beans, salt, flour and oil; Egyptian-brand dishwashing and floor-cleaner prices; liquid hand-soap 500 ml prices; existing retailer private-label prices. Salt is sold on ration cards at a subsidised 1 EGP per 300 g, which makes it a weak private-label candidate.</p>
+</section>
+
+<!-- ===================== 4 MANUFACTURING ===================== -->
+<section class="sec full-only" id="s4">
+  <p class="sec-num">04</p><h2>Manufacturing and sourcing models</h2>
+  <div class="tw"><table><thead><tr><th>Dimension</th><th>A · Contract manufacturing</th><th>B · Bulk procurement + repacking</th><th>C · Own manufacturing</th></tr></thead><tbody>
+    <tr><td>Best-fit categories</td><td>Dishwashing, laundry, floor and multipurpose cleaners, hand soap, bar soap, pasta</td><td>Sugar, rice, lentils, beans, salt</td><td>Only proven high-volume liquids (later)</td></tr>
+    <tr><td>Initial investment <span class="tag t-a">ASSUMPTION</span></td><td>EGP 0.5–1.0 M: development, samples, lab tests, artwork, plates and bottle moulds</td><td>EGP 1–3 M plus raw-stock inventory; packer toll fee per kg</td><td>EGP 25–60 M+: blending, filling lines, licences and site</td></tr>
+    <tr><td>Unit cost position</td><td>Co-man margin included (est. 10–20%)</td><td>Lowest if bulk is bought well; commodity price risk sits with us</td><td>Lowest at scale; high fixed cost</td></tr>
+    <tr><td>MOQ (to confirm by RFQ)</td><td>Typically 3,000–10,000 units per SKU per run <span class="tag t-a">ASSUMPTION</span></td><td>Truckload bulk (e.g. 20–25 t) plus packer minimums</td><td>Line-efficiency driven</td></tr>
+    <tr><td>Quality and regulatory</td><td>Factory licences, NFSA (food) and GOEIC conformity where relevant, batch COAs, retained samples</td><td>Packer must hold food licences and NFSA compliance; lot traceability</td><td>Full licensing; highest liability</td></tr>
+    <tr><td>Lead time</td><td>Development 4–10 weeks; repeat runs 2–4 weeks <span class="tag t-a">ASSUMPTION</span></td><td>1–3 weeks once packaging is ready</td><td>12–24 months to commission</td></tr>
+    <tr><td>Working capital</td><td>Pay the co-man on 0–30 days; inventory 3–6 weeks</td><td>Heavy: bulk stock plus finished goods</td><td>Heaviest</td></tr>
+    <tr><td>Verdict</td><td><span class="pill ok">Launch model</span></td><td><span class="pill warn">Selective: rice and pulses only</span></td><td><span class="pill bad">Not before year 3</span></td></tr>
+  </tbody></table></div>
+  <h3>Potential Egyptian manufacturers and co-packers</h3>
+  <div class="tw"><table><thead><tr><th>Company</th><th>Category</th><th>What the public source says</th><th>Status</th></tr></thead><tbody>
+    <tr><td>ADCO</td><td>Detergents, dishwashing liquids</td><td>Detergents and chemicals factory offering private-label contract manufacturing; exports to UK, Italy, Lebanon</td><td><span class="tag t-r">Self-described PL capability</span></td></tr>
+    <tr><td>Scitra Egypt (Albatha)</td><td>Home and personal care</td><td>Describes itself as a leading contract manufacturer for home and personal care; exports to US, Europe, Gulf</td><td><span class="tag t-r">Self-described PL capability</span></td></tr>
+    <tr><td>Greenline Co. for Production &amp; Packaging</td><td>Dishwashing liquid</td><td>Exhibitor profile: dishwashing liquids in various sizes and fragrances available for private label</td><td><span class="tag t-r">Self-described PL capability</span></td></tr>
+    <tr><td>Madar Group</td><td>Powders, dish liquids, shampoo, liquid soap</td><td>Sourcing listing claims contract manufacturing; the listing mixes text from another firm</td><td><span class="tag t-a">Prospect — low confidence</span></td></tr>
+    <tr><td>Chemist for Trading</td><td>Home care formulation and packing</td><td>Directory entry says it specialises in private-label manufacturing</td><td><span class="tag t-a">Prospect</span></td></tr>
+    <tr><td>Rice and sugar packers</td><td>Staples</td><td>Not identified in this research; source through the rice division of the Federation of Egyptian Industries and Alexandria and Cairo wholesale markets</td><td><span class="tag t-a">To source</span></td></tr>
+  </tbody></table></div>
+  <p class="faint">"Self-described" means the company states it on its own website or listing. None has been audited, quoted or sampled. Category context: Statista projects Egypt's dishwashing-detergent market at about US$0.48 bn in 2025, growing about 3.9% a year.</p>
+</section>
+
+<!-- ===================== 5 UNIT ECONOMICS ===================== -->
+<section class="sec full-only" id="s5">
+  <p class="sec-num">05</p><h2>Unit economics and price waterfall</h2>
+  <p>Every cost line is a <span class="tag t-e">ESTIMATE</span> or <span class="tag t-a">ASSUMPTION</span> until RFQs arrive, so edit any blue cell and every downstream figure recalculates, including the financial model in Section 8. Retail prices are inclusive of VAT. Our revenue and costs are <b>net of VAT</b>, because input VAT is recoverable for a registered business; confirm with a tax adviser.</p>
+  <div class="callout"><b>Formulas used</b>
+    Fully landed unit cost = (raw + filling/processing + packaging + printing + QC + carton + inbound transport + warehouse handling + distribution) × (1 + loss %) ·
+    Net wholesale revenue = (retail ÷ (1 + VAT)) × (1 − retailer margin) × (1 − rebate) ·
+    Gross profit = net wholesale revenue − landed cost · Contribution = gross profit − sales commission ·
+    Retailer gross margin % = (net retail − net wholesale purchase) ÷ net retail.</div>
+  <div class="noprint inputs" style="max-width:640px">
+    <label>Retailer back-margin rebate %<input type="number" id="in-rebate" min="0" max="15" step="0.5"></label>
+    <label>Sales commission % of invoice<input type="number" id="in-comm" min="0" max="10" step="0.5"></label>
+    <label>Raw-material cost index (1.00 = base)<input type="number" id="in-rawidx" min="0.5" max="2" step="0.01"></label>
+  </div>
+  <div class="tw"><table id="ue-table"></table></div>
+  <h3>Price waterfall: from factory to shelf</h3>
+  <div class="noprint" style="margin:6px 0"><label class="small">SKU <select id="wf-sku" style="width:auto"></select></label></div>
+  <div id="wf"></div>
+  <h3>Sensitivity: gross margin % vs raw-material price and order volume</h3>
+  <p class="small muted">Volume tiers change filling and packaging unit costs: small runs (+15% on conversion costs), base, and large runs (−10%). <span class="tag t-a">ASSUMPTION</span></p>
+  <div class="tw"><table id="sens-sku"></table></div>
+</section>
+
+<!-- ===================== 6 STRATEGY ===================== -->
+<section class="sec full-only" id="s6">
+  <p class="sec-num">06</p><h2>Commercial strategy: own brand vs private label as a service</h2>
+  <div class="tw"><table><thead><tr><th>Dimension</th><th>Opportunity A · Our own consumer brand</th><th>Opportunity B · Private Label as a Service (PLaaS)</th></tr></thead><tbody>
+    <tr><td>Who owns the brand</td><td>Us (trademark registration required)</td><td>The retailer; we own specifications and the supply know-how</td></tr>
+    <tr><td>How we win</td><td>Consumer pull, marketing, listings across chains</td><td>Retailer margin uplift (25% vs typical brand trade margins), exclusivity and speed</td></tr>
+    <tr><td>Pricing</td><td>Wholesale price list; promotions funded by us</td><td>Cost-plus or fixed price per SKU per quarter, plus a <b>setup fee</b> (model default EGP 40k per retailer programme <span class="tag t-a">ASSUMPTION</span>) and a commodity price-adjustment clause</td></tr>
+    <tr><td>Marketing spend</td><td>High: launch, sampling, digital, in-store</td><td>Low: retailer markets its own label</td></tr>
+    <tr><td>Inventory ownership</td><td>Ours</td><td>Negotiable: retailer commits to forecasts and buys back produced stock</td></tr>
+    <tr><td>Exclusivity</td><td>None</td><td>Per retailer, per region or format</td></tr>
+    <tr><td>Contract structure</td><td>Standard supplier agreement</td><td>Master supply agreement + specification sheets + QC protocol + forecast commitment + price-review clause + recall allocation</td></tr>
+    <tr><td>Working capital</td><td>Highest (stock + receivables + marketing)</td><td>Lower if a deposit or shorter terms are agreed (target 30–45 days; model input)</td></tr>
+    <tr><td>Risk allocation</td><td>All demand risk ours</td><td>Shared; quality and recall split per contract</td></tr>
+    <tr><td>Margin potential</td><td>Higher per unit once scaled</td><td>Moderate per unit, more predictable</td></tr>
+    <tr><td><b>Verdict</b></td><td><span class="pill warn">Phase 2 (month 9+)</span></td><td><span class="pill ok">Launch first</span></td></tr>
+  </tbody></table></div>
+  <h3>Pitch to a regional chain (one paragraph)</h3>
+  <p>"We will build your own-label range of cleaning and staple products, made by audited Egyptian factories, with your brand and our quality control. Each SKU is priced 25–35% below the leading brand while giving you about a 25% margin. We take care of specs, sampling, packaging, lab tests and delivery. Pilot: 5 SKUs, 60 days, in 5–10 branches. We stop if sell-through targets are not met."</p>
+</section>
+
+<!-- ===================== 7 RETAILER SIMULATION ===================== -->
+<section class="sec full-only" id="s7">
+  <p class="sec-num">07</p><h2>Retailer-level profitability simulation</h2>
+  <p class="muted">Branch counts are <b>hypothetical</b> archetypes. Units per SKU per branch per day are an <span class="tag t-a">ASSUMPTION</span> to replace with pilot sell-through data. SKU economics come from Section 5 using the current product mix.</p>
+  <div class="noprint inputs" style="max-width:520px"><label>Units / SKU / branch / day — multiplier<input type="number" id="in-velmult" min="0.2" max="5" step="0.1" value="1"></label><label>Payment terms (days) — override<select id="in-dsoarch"><option value="">Per archetype</option><option>30</option><option>60</option><option>90</option><option>120</option></select></label></div>
+  <div class="tw"><table id="arch-table"></table></div>
+</section>
+
+<!-- ===================== 8 FINANCIAL MODEL ===================== -->
+<section class="sec full-only" id="s8">
+  <p class="sec-num">08</p><h2>Financial model (36 months)</h2>
+  <p class="muted">The model is formula-driven in this page. Change any input and the whole projection recalculates. It covers three scenarios. The sheet structure follows the requested 17 tabs; this page holds the core of them, and an Excel export is a follow-up deliverable.</p>
+  <div class="noprint" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:10px 0"><span class="small"><b>Scenario</b></span><div class="seg" role="group" aria-label="Scenario"><button data-sc="cons">Conservative</button><button data-sc="base">Base</button><button data-sc="aggr">Aggressive</button></div><span class="faint">Picking a scenario loads its preset inputs; you can then edit any value.</span></div>
+  <div class="inputs noprint" id="model-inputs"></div>
+  <div class="grid g4" id="model-kpis" style="margin-top:12px"></div>
+  <h3>Monthly revenue and gross profit (EGP)</h3><div id="ch-rev"></div>
+  <h3>Monthly EBITDA (EGP)</h3><div id="ch-ebitda"></div>
+  <h3>Cumulative cash before funding (EGP)</h3><div id="ch-cash"></div>
+  <h3>Annual profit &amp; loss</h3><div class="tw"><table id="pl-table"></table></div>
+  <h3>Working capital and break-even</h3><div class="tw"><table id="wc-table"></table></div>
+  <h3>Sensitivity (year-3 EBITDA and peak funding)</h3><div class="tw"><table id="sens-table"></table></div>
+  <details class="noprint" style="margin-top:12px"><summary>Monthly detail (36 months)</summary><div class="tw"><table id="month-table"></table></div></details>
+</section>
+
+<!-- ===================== 9 BENCHMARKS ===================== -->
+<section class="sec full-only" id="s9">
+  <p class="sec-num">09</p><h2>International benchmarks and lessons for Egypt</h2>
+  <div class="tw"><table><thead><tr><th>Benchmark</th><th>Evidence</th><th>What to adapt in Egypt</th></tr></thead><tbody>
+    <tr><td>Europe overall</td><td>Private label reached about €387 bn and a 38.8% grocery value share across 17 markets in 2025 (PLMA / NielsenIQ). Above 50% in Switzerland; 23.6%–48.2% elsewhere. Rabobank expects Western Europe to go from 41% to nearly 44% by 2030. <span class="tag t-r">REPORTED</span></td><td>Private-label share rises with retailer concentration, so Egypt's growth runs through the expanding discounters and chains.</td></tr>
+    <tr><td>Aldi / Lidl</td><td>Own-label spend share cited at about 91.6% (Aldi) and 81.9% (Lidl); Lidl states about 85% of its assortment is own brand. Market and period unclear. <span class="tag t-r">REPORTED · low conf.</span></td><td>Narrow assortments, 1–2 SKUs per need, long-term co-man contracts, tight specs and cost-down cycles. This fits Kazyon and BIM-style hard discount.</td></tr>
+    <tr><td>Carrefour (incl. Egypt)</td><td>Planned 1,000+ private-label SKUs in Egypt in 2024; claims 99% local sourcing. <span class="tag t-r">REPORTED</span></td><td>Tiered labels (price-entry, standard, premium) and local factories. Competing to supply Carrefour means audit-grade quality systems.</td></tr>
+    <tr><td>Tesco, Walmart Great Value, Amazon Basics</td><td>Not quantified in this research (no reliable figures retrieved).</td><td>Lessons used qualitatively: good-better-best tiers, a value promise printed on pack, and data-driven range cuts.</td></tr>
+    <tr><td>MENA</td><td>McKinsey 2026: private-label penetration below 10% in four of five MENA markets. <span class="tag t-r">REPORTED</span></td><td>Early market: start where branded price premiums are largest, which is home care.</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- ===================== 10 RISKS ===================== -->
+<section class="sec full-only" id="s10">
+  <p class="sec-num">10</p><h2>Risks and regulatory requirements</h2>
+  <h3>Regulatory checklist</h3>
+  <ul>
+    <li><b>Food (sugar, rice, pulses, pasta):</b> NFSA was established by Law No. 1 of 2017 and sets mandatory labelling rules. Labels must be in Arabic and show product name, manufacturer name and address, brand, origin, ingredients, and production and expiry dates. Packers must hold food-establishment licences. Confirm with NFSA whether each private-label SKU needs its own registration or is covered by the manufacturer's licence. <span class="tag t-r">REPORTED</span> (US Commercial Guide, FAO)</li>
+    <li><b>Factory and trademark registration:</b> GOEIC decrees 992/2015 and 43/2016 cover factory registration for certain imported goods, and include trademark-registration conditions. Register our own trademark (Opportunity A) at the Egyptian Trademark Office before launch.</li>
+    <li><b>Home and personal care:</b> verify the applicable Egyptian standards and any registration for detergents and hand soap with the manufacturer. Require SDS and batch COA documents. Every performance claim (for example "antibacterial") needs test evidence.</li>
+    <li><b>Consumer protection and VAT:</b> correct VAT treatment per SKU (sugar exempt; macaroni exempt except semolina; 14% standard on home care) and accurate net weight and volume declarations.</li>
+  </ul>
+  <h3>Risk register</h3>
+  <div class="tw"><table><thead><tr><th>#</th><th>Risk</th><th>Prob.</th><th>Impact</th><th>Mitigation</th><th>Owner</th></tr></thead><tbody id="risk-table"></tbody></table></div>
+</section>
+
+<!-- ===================== 11 ENTRY PLAN ===================== -->
+<section class="sec" id="s11">
+  <p class="sec-num">11</p><h2>Market entry: SKU priority and 90-day plan</h2>
+  <p class="muted">Scores run from 1 (poor) to 5 (strong). Margin scores use the Section 5 model; the other scores are analyst judgements. Weights: margin 25%, capital 10%, frequency 15%, supplier availability 10%, price competitiveness 15%, storage 5%, regulatory 5%, lead time 5%, retailer adoption 10%.</p>
+  <div class="tw"><table id="sku-score"></table></div>
+  <h3>90-day roadmap</h3>
+  <div class="tw"><table><thead><tr><th>Window</th><th>Milestones and deliverables</th><th class="n">Budget EGP <span class="tag t-a">ASSUMPTION</span></th><th>KPIs (pass mark)</th></tr></thead><tbody>
+    <tr><td><b>Days 1–30</b><br>Validate</td><td>Store-price audit (6 chains × 15 SKUs); 12+ retailer buyer interviews (6 regional chains); RFQs to 6 co-packers and 3 rice packers; collect samples; confirm VAT and NFSA routes; refine model with real quotes.</td><td class="n">250,000</td><td>≥ 4 written quotes per lead SKU; ≥ 3 chains open to a pilot; quoted landed cost within 10% of the model</td></tr>
+    <tr><td><b>Days 31–60</b><br>Contract &amp; produce</td><td>Select 2 co-packers; sign MSA and spec sheets; artwork and plates; lab tests; retailer pilot agreements (pricing, terms ≤ 60 days, setup fee); first runs at MOQ.</td><td class="n">650,000 + pilot stock ≈ 900,000</td><td>Spec approval and lab pass first time; pilot contracts with ≥ 2 chains; setup fees ≥ EGP 80k</td></tr>
+    <tr><td><b>Days 61–90</b><br>Pilot &amp; decide</td><td>Deliver to 15–40 branches; weekly sell-through and out-of-stock tracking; repeat-purchase signals from retailer POS; compute actual margins and DSO; decide to roll out, fix or stop.</td><td class="n">300,000</td><td>Sell-through ≥ 70% in 6 weeks; reorder from ≥ 2 chains; gross margin ≥ 18% on home care; DSO ≤ 60 days</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- ===================== 12 INVESTMENT CASE ===================== -->
+<section class="sec" id="s12">
+  <p class="sec-num">12</p><h2>Investment case</h2>
+  <div class="grid g2">
+    <div><h3 style="margin-top:0">Opportunity and proposition</h3><ul>
+      <li><b>Addressable now:</b> modern trade (about 26% of food retail) plus regional chains and wholesalers serving the roughly 60% traditional channel.</li>
+      <li><b>Customer pain:</b> regional chains have no private-label capability, thin margins on brands, and no QC or sourcing team.</li>
+      <li><b>Our proposition:</b> a turnkey own-label programme with audited factories, a 25% retailer margin and shelf prices 25–35% below brands.</li>
+      <li><b>Revenue streams:</b> product margin, programme setup fees, and later our own brand and paid services (design, inspection).</li></ul></div>
+    <div><h3 style="margin-top:0">Funding and returns (base case, from Section 8)</h3><div id="inv-kpis" class="grid g2"></div></div>
+  </div>
+  <h3>Go / no-go criteria (end of the 90-day pilot)</h3>
+  <div class="tw"><table><thead><tr><th>Criterion</th><th>GO if</th><th>NO-GO if</th></tr></thead><tbody>
+    <tr><td>Verified landed cost (RFQs)</td><td>Within 10% of the model for ≥ 4 home-care SKUs</td><td>&gt; 20% above the model on the core SKUs</td></tr>
+    <tr><td>Home-care gross margin (actual)</td><td>≥ 18% after rebates</td><td>&lt; 12%</td></tr>
+    <tr><td>Sell-through</td><td>≥ 70% of pilot stock in 6 weeks, with reorders from ≥ 2 chains</td><td>&lt; 40% or no reorders</td></tr>
+    <tr><td>Payment terms</td><td>Contracted ≤ 60 days, actual DSO ≤ 75</td><td>Actual DSO &gt; 120 days</td></tr>
+    <tr><td>Quality</td><td>Zero critical non-conformities; lab pass</td><td>Any recall-level issue</td></tr>
+    <tr><td>Funding</td><td>Peak funding secured (equity plus a working-capital line)</td><td>Funding below 70% of the modelled peak</td></tr>
+  </tbody></table></div>
+  <h3>Growth options after validation</h3>
+  <ul><li>Extend to 12–20 SKUs (tissue and kitchen rolls, pasta, lentils, bar soap); own-brand launch in discount and independent channels; wholesale partnerships in Upper Egypt; export of home care to the Gulf through co-packers with existing export experience.</li></ul>
+</section>
+
+<!-- ===================== EVIDENCE REGISTER ===================== -->
+<section class="sec full-only" id="evidence">
+  <p class="eyebrow">Appendix A</p><h2>Evidence and assumptions register</h2>
+  <div class="tw"><table><thead><tr><th>ID</th><th>Item</th><th>Value</th><th>Type</th><th>Conf.</th><th>Source / basis</th><th>Validation needed</th></tr></thead><tbody id="ev-table"></tbody></table></div>
+</section>
+
+<section class="sec full-only" id="sources">
+  <p class="eyebrow">Appendix B</p><h2>Sources (researched 21 Nov 2026)</h2>
+  <ol id="src-list" class="small"></ol>
+  <p class="faint">Limitation: page bodies could not be fetched directly from this research environment, so figures were taken from search-result content attributed to these pages. Re-confirm each figure on the live page before external use.</p>
+</section>
+
+<p class="foot">Prepared as desk research for internal decision-making. Not investment advice. All company names are used for market description only; no partnership or endorsement is implied.</p>
+</div>
+
+<script>
+'use strict';
+/* ============================ DATA ============================ */
+const SRC = {
+  bim: ['BIM Egypt 445 stores end-2025 (Morocco World News, Mar 2026)', 'https://www.moroccoworldnews.com/2026/03/284641/bim-nears-1000-stores-in-morocco-following-record-expansion-in-2025/'],
+  bimcorp: ['BIM corporate: 418 stores in Egypt end-2024', 'https://english.bim.com.tr/Categories/108/about-us.aspx'],
+  bimplan: ['BIM plans 550 new Egypt stores by 2026 (Türkiye Today)', 'https://www.turkiyetoday.com/business/bim-to-open-550-new-stores-in-egypt-by-2026-invest-40m-in-expansion-3205149'],
+  kaz: ['Kazyon growth analysis (Trendtype)', 'https://trendtype.com/insights/kazyon-growth-future-discount-retail-africa/'],
+  kazinv: ['Kazyon US$165 m DPI-led investment (Africa.com)', 'https://africa.com/headlines/egypts-leading-discount-grocery-retailer-kazyon-attracts-165-million-investment-from-a-dpi-led-consortium-to-fuel-continued-growth-and-regional-expansion'],
+  crf: ['Carrefour at Celia — 72 stores, 12 cities (Egypt Today, Dec 2025)', 'https://www.egypttoday.com/Article/6/144101/Majid-Al-Futtaim-TMG-inagurate-a-new-Carrefour-at-Celia'],
+  crf2: ['MAF Egypt: 70 Carrefour, 25 Supeco, 5 Myli (EnterpriseAM, Sep 2025)', 'https://enterpriseam.com/egypt/2025/09/01/majid-al-futtaim-earmarks-egp-1-9-bn-in-investments-for-the-local-market-this-year/'],
+  crfpl: ['Carrefour Egypt 2024 plan: 1,000+ PL SKUs; 99% local sourcing (Alamrakamy / Zawya)', 'https://alamrakamy.com/article/58792'],
+  spin: ['Spinneys Egypt 35th store, plan for 43 by end-2026 (Daily News Egypt)', 'https://www.dailynewsegypt.com/?p=844262'],
+  metro: ['Metro 48 stores / Kheir Zaman 38 outlets (Just Food, undated)', 'https://www.just-food.com/?p=56398'],
+  seoudi: ['Seoudi Supermarket profile — 22 branches (Apollo, undated)', 'https://www.apollo.io/companies/Seoudi-Supermarket/6032391345a9cc008c799a8c'],
+  hyper: ['Hyper One New Sphinx branch (Zawya)', 'https://www.zawya.com/en/business/hyper-one-expands-footprint-in-new-sphinx-city-e8nr9q7x'],
+  ragab: ['Awlad Ragab — about 40 branches (Marefa)', 'https://www.marefa.org/%D8%A3%D9%88%D9%84%D8%A7%D8%AF_%D8%B1%D8%AC%D8%A8'],
+  fath: ['Fathalla Market branch listings (Yellow Pages Egypt)', 'https://yellowpages.com.eg/ar/profile/fathalla-market/689345'],
+  lulu: ['Lulu Egypt hypermarket openings (Images RetailME)', 'https://www.imagesretailme.com/lulu-group-inaugurates-first-hypermarket-in-cairo-plans-300-million-investment-in-egypt/'],
+  zahran: ['Zahran acquires Alfa Market stores (EnterpriseAM, 2023)', 'https://enterpriseam.com/egypt/wp-json/wp/v2/posts/607076'],
+  usda: ['USDA FAS Retail Foods Annual EG2024-0024', 'https://agriexchange.apeda.gov.in/MarketReport/Reports/Retail%20Foods%20Annual_Cairo_Egypt_EG2024-0024.pdf'],
+  bos: ['Bank of Scotland trade guide — Egypt distribution', 'https://www.bankofscotlandtrade.co.uk/en/market-potential/egypt/distribution'],
+  pop: ['CAPMAS population 109.5 M (Egypt Today, Sep 2026)', 'https://www.egypttoday.com/Article/1/149579/Egypt%E2%80%99s-domestic-population-reaches-109-5-Million-CAPMAS'],
+  popgov: ['Governorate populations, Jan 2025 (Cairo Governorate news)', 'https://www.cairo.gov.eg/en/news/news-eng/2025/1aa7f2e31cf84a1f931d520fa095dd36'],
+  sugar: ['Sugar packed avg 35.68 EGP; initiative outlets 25 EGP (Banker News, 16 Nov 2026)', 'https://www.banker.news/160995'],
+  ahram: ['Food commodity averages, 20 Nov 2026 (Al-Ahram Gate)', 'https://gate.ahram.org.eg/News/5988368.aspx'],
+  twasl: ['Food commodity prices, 19 Nov 2026 (Twasl News)', 'https://twaslnews1.twaslnews.com/7959121/'],
+  ricekg: ['White rice 27–32 EGP/kg — rice division head (Egypt Telegraph, 15 Nov 2026)', 'https://www.egypttelegraph.com/181935'],
+  ricet: ['White rice 22,000–24,000 EGP/t (El Watan, 31 Jul 2026)', 'https://www.elwatannews.com/news/details/8330912'],
+  sugart: ['Record stocks push sugar to EGP 20,000/t (Al Manassa, Aug 2026)', 'https://almanassa.com/en/news/33515'],
+  sugart2: ['Sugar up ~EGP 4,000/t after exports opened (Masrawy, 14 Sep 2026)', 'https://www.masrawy.com/news/news_economy/details/2026/9/14/3048047/'],
+  dettol: ['Dettol price list, Nov 2026 (Al Mal News)', 'https://almalnews.com/2145476/'],
+  soapw: ['Soap trade carton prices 2026 (Shbabbek)', 'https://shbabbek.com/show/272949'],
+  crfsoap: ['Carrefour Egypt hand soap category (Lux 115 g, Lifebuoy 115 g)', 'https://www.carrefouregypt.com/mafegy/ar/c/NFEGY2080200'],
+  fairy: ['Carrefour Egypt — Fairy Original 620 g', 'https://www.carrefouregypt.com/mafegy/en/fairy-original-620-eg/p/577813'],
+  pril600: ['Carrefour Egypt — Pril category', 'https://www.carrefouregypt.com/mafegy/ar/c/NFEGY3020000'],
+  vats: ['Carrefour Egypt — Vats green lemon 1 L', 'https://www.carrefouregypt.com/mafegy/ar/auto-dishwash-gel/vats-dish-wash-green-lemon-1l/p/685636'],
+  pril1l: ['Kanbkam — Pril 1 L listings (undated)', 'https://supermarket.kanbkam.com/eg/en/pril-dishwashing-liquid-with-yellow-lemon-600-ml-CE489585'],
+  persil: ['Carrefour Egypt — Persil Power Gel 1 L', 'https://www.carrefouregypt.com/mafegy/en/detergent-liquid/persil-gel-1l/p/293685'],
+  zeina: ['Carrefour Egypt — Zeina kitchen towel 6 rolls', 'https://www.carrefouregypt.com/mafegy/en/cleaning-household/toilet-rolls-kitchen-rolls-tissues/kitchen-rolls/kitchen-rolls/zeina-kitchen-4-2-rolls/p/480950'],
+  fine: ['Talabat Mart — Fine and Zeina kitchen rolls', 'https://www.talabat.com/egypt/talabat-mart/product/zeina-multi-purpose-large-jumbo-roll/s/907849'],
+  fiba: ['Fiba / Clorel price rises 2026 (Shbabbek)', 'https://shbabbek.com/show/272932'],
+  salt: ['Ration-card goods list Jan 2026 — salt 300 g (Prices World)', 'https://www.pricesworld.net/%d8%a7%d8%b3%d8%b9%d8%a7%d8%b1-%d8%a7%d9%84%d8%b3%d9%84%d8%b9-%d8%a7%d9%84%d8%aa%d9%85%d9%88%d9%8a%d9%86%d9%8a%d8%a9'],
+  vat: ['VAT Law 67/2016 (Egyptian Tax Authority)', 'https://eta.gov.eg/sites/default/files/2024-02/Law-english-no.67-2016.pdf.pdf'],
+  vat2: ['Egypt VAT exemptions summary (Avalara VATlive)', 'https://www.avalara.com/vatlive/en/vat-news/egypt-vat-exemptions.html'],
+  cbe: ['CBE raises rates 100 bp; lending rate 21% (Daily News Egypt, 31 Oct 2026)', 'https://www.dailynewsegypt.com/2026/10/31/cbe-rate-hike-aims-to-sustain-disinflation-ensure-2027-inflation-target-is-met/'],
+  infl: ['Urban inflation 12.7% in Oct 2026 (Arab News)', 'https://www.arabnews.com/business/egypts-annual-urban-inflation-eases-to-127-in-october-3010895'],
+  allianz: ['Allianz Trade — Egypt collection complexity', 'https://www.allianz-trade.com/en_global/economic-research/collection-complexity/egypt.html'],
+  adco: ['ADCO Egypt profile', 'https://www.populer.com/adco_egypt-1215451/view'],
+  scitra: ['Scitra Egypt (Albatha)', 'https://albatha.com/scitra-egpt.htm'],
+  green: ['Greenline Co. exhibitor profile (Prime Expo)', 'https://prime-expo.com/exhibitors/greenline-co-for-production-and-packaging-3'],
+  madar: ['Madar Group Egypt (SourceReady)', 'https://www.sourceready.com/supplier/detail/madar-group'],
+  statista: ['Statista — dishwashing detergents Egypt', 'https://statista.com/outlook/cmo/home-laundry-care/dishwashing-detergents/egypt'],
+  nfsa: ['US Commercial Guide — Egypt labelling requirements', 'https://www.trade.gov/country-commercial-guides/egypt-labelingmarking-requirements'],
+  goeic: ['GOEIC conformity assessment programme (trade.gov)', 'https://www.trade.gov/market-intelligence/goeic-conformity-assessment-program'],
+  fao: ['NFSA Law No. 1 of 2017 (FAOLEX)', 'https://faolex.fao.org/docs/pdf/egy208090E.pdf'],
+  plma: ['PLMA — private label sales and shares across Europe', 'https://www.plmainternational.com/article/private-label-sales-and-shares-surge-across-europe'],
+  rabo: ['Rabobank private-label outlook (ESM Magazine)', 'https://www.esmmagazine.com/private-label/structural-shifts-drive-long-term-private-label-growth-rabobank-321008'],
+  mck: ['McKinsey — State of grocery retail MENA 2026', 'https://www.mckinsey.com/ao/en/our-insights/state-of-grocery-retail-mena-2026-managing-the-growth-paradox'],
+  niq: ['Nielsen private label Egypt deck (2018 data)', 'https://cdn.asp.events/CLIENT_Dubai_Wo_4B15F265_5056_B739_54F3125D47F0BC95/sites/Private-Label/media/PDF%27s/Onur-Yuksel-Nielsen.pdf'],
+  think: ['Think Marketing — Egypt and private labels (Nielsen survey)', 'https://thinkmarketingmagazine.com/egypt-represents-0-of-annual-global-sales-of-private-labels/']
+};
+const SRC_KEYS = Object.keys(SRC);
+const ref = k => `<a href="${SRC[k][1]}" target="_blank" rel="noopener">[${SRC_KEYS.indexOf(k) + 1}]</a>`;
+
+const CHAINS = [
+  ['BIM (BİM Türkiye)', 'Hard discount', '445', 'End-2025', ['bim', 'bimcorp'], 'H', 'Discount model is built on own labels in its home market; Egypt range not documented here', 'High volume price-entry SKUs; central buying in Turkey/Egypt; demanding cost targets'],
+  ['Kazyon (Tawfeer; DPI, IFC investors)', 'Hard discount', '>1,000', 'Undated analysis', ['kaz', 'kazinv'], 'L', 'Not documented in this research', 'Largest discount network across 22 governorates; ideal for price-entry home care if specs and cost fit'],
+  ['Carrefour (Majid Al Futtaim)', 'Hyper/super + Supeco + Myli', '72 Carrefour (+25 Supeco, 5 Myli Sep 2025)', 'Dec 2025', ['crf', 'crf2'], 'H', 'Planned 1,000+ PL SKUs (2024); 99% local sourcing claim', 'Audited local co-man route; high standards; long onboarding'],
+  ['Metro Markets (Mansour Group)', 'Supermarket', '48', 'Undated', ['metro'], 'L', 'Not documented', 'Upper-middle shoppers; selective PL in home care'],
+  ['Kheir Zaman (Mansour Group)', 'Discount', '38', 'Undated', ['metro'], 'L', 'Not documented', 'Strong fit for price-entry; Upper Egypt presence (e.g. Qena)'],
+  ['Spinneys Egypt', 'Supermarket', '35 (plan 43 by end-2026)', 'Early 2026', ['spin'], 'M', 'Not documented in Egypt', 'Premium positioning; PL in household basics is possible'],
+  ['Seoudi Market', 'Supermarket', '22', 'Undated profile', ['seoudi'], 'L', 'Not documented', 'Cairo upper-middle; candidate for a PLaaS programme'],
+  ['Hyper One', 'Hypermarket', '~4 sites (inferred)', 'Mixed dates', ['hyper'], 'L', 'Not documented', 'Large-format, high SKU throughput per store'],
+  ['Awlad Ragab', 'Supermarket / hyper', '~40', 'Undated', ['ragab'], 'L', 'Not documented', 'Mass-market Cairo; good PLaaS candidate'],
+  ['Fathalla Market / Gomla', 'Supermarket + wholesale', 'Not verified', 'Directory listings', ['fath'], 'L', 'Not documented', 'Alexandria, Beheira, Matrouh; wholesale arm can reach independents'],
+  ['Lulu Hypermarket', 'Hypermarket', 'Small network (not verified)', 'Mixed dates', ['lulu'], 'L', 'Group runs own labels in GCC', 'Limited scale in Egypt'],
+  ['Zahran Market', 'Supermarket', 'Not verified (acquired Alfa Market stores)', 'Sep 2023', ['zahran'], 'L', 'Not documented', 'Alexandria-based regional chain; PLaaS candidate']
+];
+
+const GOVS = [ // name, popM or null, size, pp, access, modern, compInv, wave, note
+  ['Cairo', 10.5, 5, 4, 5, 5, 2, 1, 'Densest modern trade; most competition'], ['Giza', 9.8, 5, 4, 5, 4, 2, 1, 'October/Zayed clusters; Hyper One'],
+  ['Qalyubia', null, 4, 3, 5, 3, 3, 1, 'Obour industrial zone (co-packers nearby)'], ['Alexandria', null, 4, 4, 4, 4, 3, 1, 'Regional chains: Fathalla, Zahran, Gomla'],
+  ['Sharqia', 8.1, 4, 3, 4, 3, 4, 2, '10th of Ramadan manufacturing hub'], ['Dakahlia', 7.2, 4, 3, 4, 3, 4, 2, 'Mansoura retail cluster'], ['Beheira', 7.0, 4, 2, 4, 2, 4, 2, 'Reached via Alexandria distributors'],
+  ['Gharbia', null, 3, 3, 4, 3, 4, 2, 'Tanta / Mahalla'], ['Monufia', null, 3, 3, 4, 2, 4, 2, 'Sadat City industry'], ['Kafr El Sheikh', null, 3, 2, 3, 2, 4, 2, 'Rice-growing region (sourcing)'],
+  ['Damietta', null, 2, 3, 3, 2, 4, 3, 'Smaller market'], ['Ismailia', null, 2, 3, 4, 3, 3, 3, 'Canal cluster'], ['Port Said', null, 2, 4, 3, 3, 3, 3, 'Higher income, small population'], ['Suez', null, 2, 3, 4, 3, 3, 3, 'First Carrefour opened 2024–25'],
+  ['Fayoum', null, 3, 2, 4, 2, 4, 3, 'Near Giza; low modern trade'], ['Beni Suef', null, 3, 2, 3, 2, 4, 3, 'Gateway to Upper Egypt'], ['Minya', null, 4, 1, 3, 1, 4, 4, 'Large population; traditional trade'],
+  ['Assiut', null, 3, 2, 2, 2, 4, 4, 'Wholesale hub for south'], ['Sohag', null, 4, 1, 2, 1, 5, 4, 'Wholesaler-led'], ['Qena', null, 3, 1, 2, 2, 4, 4, 'Kheir Zaman presence'], ['Luxor', null, 2, 2, 2, 2, 4, 4, 'Tourism-linked demand'], ['Aswan', null, 2, 2, 1, 2, 4, 4, 'Longest haul']
+];
+
+const PRICES = [ // product, brand, size, retailer, price, perUnit text, date, type, src
+  ['White sugar', 'Market average (packed)', '1 kg', 'IDSC price portal via press', 35.68, '35.68 /kg', '16 Nov 2026', 'v', 'sugar'],
+  ['White sugar', 'Ministry initiative outlets', '1 kg', 'Ministry of Supply outlets', 25.00, '25.00 /kg', '16 Nov 2026', 'v', 'sugar'],
+  ['Rice (packed)', 'Market average', '1 kg', 'IDSC averages via Al-Ahram', 35.00, '35.00 /kg', '20 Nov 2026', 'v', 'ahram'],
+  ['Rice (packed)', 'Market average (other report)', '1 kg', 'Press report', 32.00, '32.00 /kg', '19 Nov 2026', 'r', 'twasl'],
+  ['Rice (white)', 'Range per rice division head', '1 kg', 'Federation of Industries (press)', 29.50, '27–32 /kg', '15 Nov 2026', 'r', 'ricekg'],
+  ['Pasta (packed)', 'Market average', '1 kg', 'IDSC averages via Al-Ahram', 34.00, '34.00 /kg', '20 Nov 2026', 'v', 'ahram'],
+  ['Lentils (packed)', 'Market average', '1 kg', 'IDSC averages via Al-Ahram', 69.00, '69.00 /kg', '20 Nov 2026', 'v', 'ahram'],
+  ['Flour (packed)', 'Market average', '1 kg', 'IDSC averages via Al-Ahram', 28.00, '28.00 /kg', '20 Nov 2026', 'v', 'ahram'],
+  ['Sunflower oil', 'Market average', '1 L', 'IDSC averages via Al-Ahram', 113.00, '113.00 /L', '20 Nov 2026', 'v', 'ahram'],
+  ['Salt', 'Ration-card (subsidised)', '300 g', 'Ministry ration list', 1.00, '3.33 /kg', 'Jan 2026', 'r', 'salt'],
+  ['Dishwashing liquid', 'Fairy Original', '620 g', 'Carrefour Egypt', 84.99, '137 /kg', 'Undated (promo, was 98.99)', 'r', 'fairy'],
+  ['Dishwashing liquid', 'Pril 5-in-1 apple', '600 ml', 'Carrefour Egypt', 37.50, '62.50 /L', 'Undated', 'r', 'pril600'],
+  ['Dishwashing liquid', 'Vats green lemon', '1 L', 'Carrefour Egypt', 54.99, '54.99 /L', 'Undated (15% promo)', 'r', 'vats'],
+  ['Dishwashing liquid', 'Pril green lemon', '1 L', 'Kanbkam aggregator', 59.94, '59.94 /L', 'Undated (other listing 69.00)', 'r', 'pril1l'],
+  ['Laundry liquid', 'Persil Power Gel', '1 L', 'Carrefour Egypt', 102.50, '102.50 /L', 'Undated (category page 104.99)', 'r', 'persil'],
+  ['Hand soap bar', 'Lux creamy', '115 g', 'Carrefour Egypt', 25.99, '226 /kg', 'Undated', 'r', 'crfsoap'],
+  ['Hand soap bar', 'Lifebuoy', '115 g', 'Carrefour Egypt', 30.99, '269 /kg', 'Undated', 'r', 'crfsoap'],
+  ['Hand soap bar', 'Dettol', '165 g', 'Price list (press)', 50.00, '303 /kg', 'Nov 2026', 'r', 'dettol'],
+  ['Hand soap bar (trade)', 'Lux 85 g × 48 carton', '85 g', 'Trade price (press)', 410.00, '8.54 /bar', '2026', 'r', 'soapw'],
+  ['Hand soap bar (trade)', 'Dettol 165 g × 36 carton', '165 g', 'Trade price (press)', 480.00, '13.33 /bar', '2026', 'r', 'soapw'],
+  ['Kitchen rolls', 'Zeina kitchen towel', '6 rolls', 'Carrefour Egypt', 66.99, '11.17 /roll', 'Undated (promo, was 95.99)', 'r', 'zeina'],
+  ['Kitchen rolls', 'Fine 2-ply kitchen towel', '6 rolls', 'Talabat Mart', 106.95, '17.83 /roll', 'Undated', 'r', 'fine'],
+  ['Multipurpose / dish (bulk)', 'Fiba', '4 L', 'Press report', 556.00, '139 /L', '2026', 'r', 'fiba']
+];
+const LMH = [['Sugar (1 kg)', 25.00, 35.68, 35.68, 'Initiative outlets vs market average; brand-level highs not retrieved'], ['Rice (1 kg)', 27.00, 32.00, 35.00, 'Rice-division range and two official averages'],
+  ['Dishwashing liquid (per L)', 54.99, 59.94, 62.50, 'Vats promo, Pril 1 L, Pril 600 ml (undated)'], ['Laundry liquid (per L)', 102.50, 102.50, 104.99, 'Persil 1 L only — Egyptian brands not retrieved'],
+  ['Bar soap (per 100 g)', 22.60, 26.95, 30.30, 'Lux, Lifebuoy, Dettol retail listings'], ['Kitchen roll (per roll)', 11.17, 14.50, 17.83, 'Zeina promo vs Fine']];
+
+/* SKU master — costs per unit, EGP ex-VAT. bench = branded reference shelf price incl VAT (null = not retrieved). */
+const SKUS0 = [
+  { id: 'sugar', name: 'White sugar 1 kg', vat: 0, raw: 24.0, fill: 0.8, pack: 0.6, print: 0.25, qc: 0.10, carton: 0.20, inbound: 0.40, handling: 0.30, dist: 0.60, loss: 1.0, retail: 32.99, rm: 10, bench: 35.68, benchName: 'market avg packed', mix: 12, vel: 1.6, rawNote: 'Bulk est. 24,000 EGP/t (Jul–Aug 2026: 20–21k/t, +~4k after exports reopened)' },
+  { id: 'rice', name: 'Egyptian rice 1 kg', vat: 0, raw: 21.0, fill: 1.2, pack: 0.6, print: 0.25, qc: 0.15, carton: 0.20, inbound: 0.40, handling: 0.30, dist: 0.60, loss: 1.5, retail: 31.99, rm: 12, bench: 35.00, benchName: 'market avg packed', mix: 13, vel: 1.4, rawNote: 'White rice 22–24k/t (Jul 2026), easing with new harvest' },
+  { id: 'dish1', name: 'Dishwashing liquid 1 L', vat: 14, raw: 12.0, fill: 1.5, pack: 6.5, print: 0.8, qc: 0.30, carton: 0.50, inbound: 0.60, handling: 0.40, dist: 1.00, loss: 2.0, retail: 44.99, rm: 25, bench: 59.94, benchName: 'Pril 1 L', mix: 20, vel: 1.0, rawNote: 'Liquid fill cost from co-man (no formula detail); RFQ' },
+  { id: 'dish5', name: 'Dishwashing liquid 500 ml', vat: 14, raw: 6.0, fill: 1.0, pack: 4.2, print: 0.6, qc: 0.20, carton: 0.35, inbound: 0.35, handling: 0.25, dist: 0.60, loss: 2.0, retail: 26.99, rm: 25, bench: 37.50, benchName: 'Pril 600 ml', mix: 10, vel: 1.1, rawNote: 'Pro-rata of 1 L fill; smaller bottle' },
+  { id: 'laundry', name: 'Laundry liquid 1 L', vat: 14, raw: 18.0, fill: 1.5, pack: 7.0, print: 0.8, qc: 0.30, carton: 0.50, inbound: 0.60, handling: 0.40, dist: 1.00, loss: 2.0, retail: 69.99, rm: 25, bench: 102.50, benchName: 'Persil gel 1 L', mix: 12, vel: 0.7, rawNote: 'Co-man fill cost; RFQ' },
+  { id: 'handsoap', name: 'Liquid hand soap 500 ml', vat: 14, raw: 7.5, fill: 1.0, pack: 9.0, print: 0.7, qc: 0.25, carton: 0.40, inbound: 0.40, handling: 0.30, dist: 0.70, loss: 2.0, retail: 44.99, rm: 25, bench: null, benchName: 'not retrieved', mix: 8, vel: 0.6, rawNote: 'Pump bottle is the main cost driver' },
+  { id: 'bar', name: 'Hand soap bar 120 g', vat: 14, raw: 7.2, fill: 1.0, pack: 0.5, print: 0.2, qc: 0.15, carton: 0.20, inbound: 0.30, handling: 0.20, dist: 0.40, loss: 1.5, retail: 19.99, rm: 25, bench: 25.99, benchName: 'Lux 115 g', mix: 13, vel: 0.9, rawNote: 'Soap base est. ~60 EGP/kg incl. fragrance; RFQ' },
+  { id: 'floor', name: 'Floor cleaner 1 L', vat: 14, raw: 6.0, fill: 1.2, pack: 5.5, print: 0.7, qc: 0.25, carton: 0.50, inbound: 0.60, handling: 0.40, dist: 1.00, loss: 2.0, retail: 34.99, rm: 25, bench: null, benchName: 'not retrieved', mix: 12, vel: 0.8, rawNote: 'Low-active formula; bottle dominates' }
+];
+const SCEN = {
+  cons: { label: 'Conservative', start: 4, b0: 10, inc: 4, cap: 120, s0: 5, s1: 8, upd: 2.0, rawIdx: 1.08, rebate: 4, comm: 2, dso: 90, dio: 45, dpo: 30, opex: 280000, capex: 850000, setup: 30000, perRet: 15, opexGrowth: 15, finRate: 23, debtShare: 50 },
+  base: { label: 'Base', start: 3, b0: 20, inc: 8, cap: 250, s0: 6, s1: 10, upd: 3.0, rawIdx: 1.00, rebate: 3, comm: 2, dso: 75, dio: 35, dpo: 30, opex: 310000, capex: 850000, setup: 40000, perRet: 20, opexGrowth: 15, finRate: 23, debtShare: 50 },
+  aggr: { label: 'Aggressive', start: 3, b0: 30, inc: 15, cap: 450, s0: 8, s1: 12, upd: 4.0, rawIdx: 0.97, rebate: 3, comm: 2, dso: 60, dio: 30, dpo: 30, opex: 380000, capex: 900000, setup: 50000, perRet: 25, opexGrowth: 15, finRate: 23, debtShare: 50 }
+};
+const INPUTS = [['start', 'First delivery month'], ['b0', 'Branches at launch'], ['inc', 'New branches / month'], ['cap', 'Branch cap'], ['s0', 'SKUs per branch (start)'], ['s1', 'SKUs per branch (month 24)'], ['upd', 'Units / SKU / branch / day'],
+  ['dso', 'Receivable days (DSO)'], ['dio', 'Inventory days (DIO)'], ['dpo', 'Supplier payable days (DPO)'], ['opex', 'Fixed opex / month (EGP)'], ['opexGrowth', 'Opex growth / year %'], ['capex', 'Upfront investment (EGP)'], ['setup', 'Setup fee per retailer programme'], ['perRet', 'Branches per retailer'], ['finRate', 'Working-capital loan rate %'], ['debtShare', 'Debt share of funding %']];
+
+/* ============================ STATE ============================ */
+let SC = 'base'; let P = { ...SCEN.base }; let SKUS = SKUS0.map(s => ({ ...s }));
+let G = { rebate: 3, comm: 2, rawIdx: 1.0 };
+const fmt = (n, d = 0) => (n == null || !isFinite(n) ? '—' : new Intl.NumberFormat('en-US', { maximumFractionDigits: d, minimumFractionDigits: d }).format(n));
+const M = n => (Math.abs(n) >= 1e6 ? fmt(n / 1e6, 2) + ' M' : Math.abs(n) >= 1e3 ? fmt(n / 1e3, 0) + ' k' : fmt(n, 0));
+
+/* ============================ UNIT ECONOMICS ============================ */
+function ue(s, o = {}) {
+  const rawIdx = (o.rawIdx ?? G.rawIdx); const conv = o.conv ?? 1; const rebate = (o.rebate ?? G.rebate) / 100; const comm = (o.comm ?? G.comm) / 100;
+  const factory = s.raw * rawIdx + (s.fill + s.pack + s.print + s.qc + s.carton) * conv;
+  const logistics = s.inbound + s.handling + s.dist;
+  const landed = (factory + logistics) * (1 + s.loss / 100);
+  const netRetail = s.retail / (1 + s.vat / 100);
+  const invoice = netRetail * (1 - s.rm / 100);
+  const netRev = invoice * (1 - rebate);
+  const gp = netRev - landed; const commission = invoice * comm; const contrib = gp - commission;
+  return { factory, logistics, landed, netRetail, invoice, netRev, gp, gpPct: gp / netRev, commission, contrib, contribPct: contrib / netRev,
+    retMarginPct: (netRetail - invoice) / netRetail, vatAmt: s.retail - netRetail, saving: s.bench ? 1 - s.retail / s.bench : null, lossAmt: (factory + logistics) * s.loss / 100 };
+}
+function mixAvg() { const tw = SKUS.reduce((a, s) => a + s.mix * s.vel, 0); const r = { netRev: 0, landed: 0, commission: 0, gp: 0 };
+  SKUS.forEach(s => { const w = s.mix * s.vel / tw; const u = ue(s); r.netRev += w * u.netRev; r.landed += w * u.landed; r.commission += w * u.commission; r.gp += w * u.gp; }); r.velAvg = tw / SKUS.reduce((a, s) => a + s.mix, 0); return r; }
+
+/* ============================ FINANCIAL MODEL ============================ */
+function runModel(p = P, over = {}) {
+  const priceIdx = over.priceIdx ?? 1, volIdx = over.volIdx ?? 1, rawIdx = over.rawIdx ?? G.rawIdx, dso = over.dso ?? p.dso;
+  const tw = SKUS.reduce((a, s) => a + s.mix * s.vel, 0); let netRev = 0, landed = 0, comm = 0;
+  SKUS.forEach(s => { const w = s.mix * s.vel / tw; const u = ue({ ...s, retail: s.retail * priceIdx }, { rawIdx }); netRev += w * u.netRev; landed += w * u.landed; comm += w * u.commission; });
+  const velAvg = tw / SKUS.reduce((a, s) => a + s.mix, 0);
+  const rows = []; let prevB = 0, prevWC = 0, cash = 0, minCash = 0, cumEBT = 0;
+  for (let m = 1; m <= 36; m++) {
+    const br = m < p.start ? 0 : Math.min(p.cap, p.b0 + p.inc * (m - p.start)); const newB = Math.max(0, br - prevB); prevB = br;
+    const sk = p.s0 + (p.s1 - p.s0) * Math.min(1, (m - 1) / 23);
+    const units = br * sk * p.upd * velAvg * 30 * volIdx;
+    const rev = units * netRev; const cogs = units * landed; const gp = rev - cogs; const cm = units * comm;
+    const setupRev = (newB / p.perRet) * p.setup;
+    const opex = p.opex * Math.pow(1 + p.opexGrowth / 100, Math.floor((m - 1) / 12));
+    const ebitda = gp + setupRev - cm - opex; const dep = p.capex / 36;
+    const ar = (rev + setupRev) * dso / 30, inv = cogs * p.dio / 30, ap = cogs * p.dpo / 30; const wc = ar + inv - ap; const dWC = wc - prevWC; prevWC = wc;
+    const interest = Math.max(0, -cash) * (p.debtShare ?? 50) / 100 * p.finRate / 100 / 12;
+    const ebt = ebitda - dep - interest; let tax = 0; cumEBT += ebt; if (ebt > 0 && cumEBT > 0) tax = Math.min(ebt, cumEBT) * 0.225;
+    const ni = ebt - tax; const cf = ni + dep - dWC - (m === 1 ? p.capex : 0); cash += cf; minCash = Math.min(minCash, cash);
+    rows.push({ m, br, sk, units, rev: rev + setupRev, prodRev: rev, setupRev, cogs, gp, cm, contrib: gp + setupRev - cm, opex, ebitda, dep, interest, tax, ni, ar, inv, ap, wc, cf, cash });
+  }
+  const yr = y => { const r = rows.slice((y - 1) * 12, y * 12); const s = k => r.reduce((a, x) => a + x[k], 0); return { rev: s('rev'), cogs: s('cogs'), gp: s('gp') + s('setupRev'), cm: s('cm'), contrib: s('contrib'), opex: s('opex'), ebitda: s('ebitda'), dep: s('dep'), interest: s('interest'), tax: s('tax'), ni: s('ni'), units: s('units'), cf: s('cf') }; };
+  const Y = [yr(1), yr(2), yr(3)];
+  const be = rows.find(r => r.ebitda > 0 && r.m > p.start); const cashBack = rows.find((r, i) => i > 0 && r.cash >= 0 && rows.slice(0, i).some(x => x.cash < 0));
+  const contribPerUnit = netRev - landed - comm; const beUnits = (p.opex * Math.pow(1 + p.opexGrowth / 100, 2)) / contribPerUnit;
+  const peak = -minCash; const roic = peak > 0 ? (Y[2].ebitda - Y[2].dep * 0 - p.capex / 3) * (1 - 0.225) / peak : null;
+  return { rows, Y, netRev, landed, comm, contribPerUnit, peak, be, cashBack, beUnits, roic, last: rows[35] };
+}
+
+/* ============================ CHARTS (SVG) ============================ */
+function lineChart(series, opts = {}) {
+  const W = 960, H = 260, L = 64, R = 16, T = 12, B = 30; const n = series[0].data.length;
+  const all = series.flatMap(s => s.data); let max = Math.max(0, ...all), min = Math.min(0, ...all); if (max === min) max = min + 1;
+  const pad = (max - min) * 0.08; max += pad; if (min < 0) min -= pad;
+  const x = i => L + (W - L - R) * (i / (n - 1)); const y = v => T + (H - T - B) * (1 - (v - min) / (max - min));
+  const ticks = 4; let g = '<g class="grid">'; for (let i = 0; i <= ticks; i++) { const v = min + (max - min) * i / ticks; g += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 8}" y="${y(v) + 4}" text-anchor="end">${M(v)}</text>`; } g += '</g>';
+  let xl = ''; for (let i = 0; i < n; i += 6) xl += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">M${i + 1}</text>`;
+  const zero = min < 0 ? `<line x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}" stroke="var(--ink-3)" stroke-width="1"/>` : '';
+  let body = '';
+  series.forEach(s => {
+    if (s.bar) { const bw = (W - L - R) / n * 0.62; s.data.forEach((v, i) => { const y0 = y(0), y1 = y(v); body += `<rect x="${x(i) - bw / 2}" y="${Math.min(y0, y1)}" width="${bw}" height="${Math.max(1, Math.abs(y1 - y0))}" rx="2" fill="${s.color}"><title>Month ${i + 1}: EGP ${fmt(v)}</title></rect>`; }); }
+    else { body += `<polyline fill="none" stroke="${s.color}" stroke-width="2" points="${s.data.map((v, i) => `${x(i)},${y(v)}`).join(' ')}"/>`; s.data.forEach((v, i) => { body += `<circle cx="${x(i)}" cy="${y(v)}" r="6" fill="transparent"><title>${s.name} · Month ${i + 1}: EGP ${fmt(v)}</title></circle>`; });
+      const li = s.data.length - 1; body += `<circle cx="${x(li)}" cy="${y(s.data[li])}" r="4" fill="${s.color}" stroke="var(--paper)" stroke-width="2"/>`; }
+  });
+  const legend = series.length > 1 ? `<div class="legend">${series.map(s => `<span><i style="background:${s.color}"></i>${s.name}</span>`).join('')}</div>` : '';
+  return legend + `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label || ''}">${g}${zero}${body}${xl}</svg>`;
+}
+
+/* ============================ RENDER ============================ */
+const $ = id => document.getElementById(id);
+const tag = t => ({ v: '<span class="tag t-v">VERIFIED</span>', r: '<span class="tag t-r">REPORTED</span>', e: '<span class="tag t-e">ESTIMATE</span>', a: '<span class="tag t-a">ASSUMPTION</span>' }[t]);
+
+function renderStatic() {
+  $('chain-table').innerHTML = CHAINS.map(c => `<tr><td><b>${c[0]}</b></td><td>${c[1]}</td><td class="n">${c[2]}</td><td>${c[3]} ${c[4].map(ref).join(' ')}</td><td class="conf-${c[5]}">${c[5]}</td><td>${c[6]}</td><td>${c[7]}</td></tr>`).join('');
+  const W = [.30, .20, .20, .15, .15];
+  $('gov-table').innerHTML = GOVS.map(g => ({ g, s: (g[2] * W[0] + g[3] * W[1] + g[4] * W[2] + g[5] * W[3] + g[6] * W[4]) })).sort((a, b) => b.s - a.s)
+    .map(({ g, s }) => `<tr><td><b>${g[0]}</b></td><td class="n">${g[1] ? g[1].toFixed(1) + ' M ' + ref('popgov') : '<span class="faint">not retrieved</span>'}</td>${g.slice(2, 7).map(v => `<td class="n">${v}</td>`).join('')}<td class="n"><b>${s.toFixed(2)}</b></td><td>Wave ${g[7]}</td><td class="small">${g[8]}</td></tr>`).join('');
+  $('price-table').innerHTML = PRICES.map(p => `<tr><td>${p[0]}</td><td>${p[1]}</td><td>${p[2]}</td><td>${p[3]}</td><td class="n">${fmt(p[4], 2)}</td><td class="n">${p[5]}</td><td>${p[6]}</td><td>${tag(p[7])} ${ref(p[8])}</td></tr>`).join('');
+  $('lmh-table').innerHTML = LMH.map(r => `<tr><td>${r[0]}</td><td class="n">${fmt(r[1], 2)}</td><td class="n">${fmt(r[2], 2)}</td><td class="n">${fmt(r[3], 2)}</td><td class="small">${r[4]}</td></tr>`).join('');
+  const RISKS = [
+    ['Retailer payment delays stretch DSO beyond 90 days', 'H', 'H', 'Contract ≤ 60 days, deposits or setup fees, receivables insurance or factoring, credit limits per chain', 'Finance'],
+    ['Commodity price spikes (sugar, rice, resins for bottles)', 'H', 'M', 'Quarterly price-review clauses, index-linked pricing for staples, short bulk positions', 'Procurement'],
+    ['Co-packer quality failure or recall', 'M', 'H', 'Site audits, approved-sample (golden sample) system, batch COAs, retained samples, product liability insurance, recall cost allocation in MSA', 'Quality'],
+    ['Supplier concentration (one co-packer per SKU)', 'M', 'M', 'Dual-source the top 3 SKUs by month 6; own the specs and artwork', 'Procurement'],
+    ['Slow-moving inventory at MOQ', 'M', 'M', 'Pilot at MOQ only for SKUs with retailer forecast commitment; buy-back clauses in PLaaS', 'Commercial'],
+    ['Regulatory: labelling, NFSA or registration gaps', 'M', 'H', 'Pre-launch regulatory review per SKU; Arabic labels; NFSA-licensed packers only', 'Regulatory'],
+    ['Branded competitors respond with promotions', 'H', 'M', 'Position on everyday value; target retailer margin; avoid head-on promotion wars', 'Commercial'],
+    ['Trademark disputes (own brand)', 'L', 'M', 'Clearance search and filing before artwork', 'Legal'],
+    ['FX-driven input inflation (packaging, fragrances)', 'M', 'M', 'Local packaging suppliers; price-review clauses', 'Finance'],
+    ['Distribution cost to Upper Egypt erodes margin', 'M', 'M', 'Serve via wholesalers; minimum drop sizes; regional 3PL', 'Operations'],
+    ['Consumer protection claims (net content, claims)', 'L', 'M', 'Fill-weight controls, claims only with evidence', 'Quality']
+  ];
+  $('risk-table').innerHTML = RISKS.map((r, i) => `<tr><td>${i + 1}</td><td>${r[0]}</td><td class="conf-${r[1] === 'H' ? 'L' : r[1] === 'M' ? 'M' : 'H'}">${r[1]}</td><td class="conf-${r[2] === 'H' ? 'L' : r[2] === 'M' ? 'M' : 'H'}">${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td></tr>`).join('');
+  $('src-list').innerHTML = SRC_KEYS.map(k => `<li><a href="${SRC[k][1]}" target="_blank" rel="noopener">${SRC[k][0]}</a></li>`).join('');
+}
+
+function renderUE() {
+  const head = ['Line (EGP per unit)', ...SKUS.map(s => s.name)];
+  const editable = ['raw', 'fill', 'pack', 'print', 'qc', 'carton', 'inbound', 'handling', 'dist', 'loss', 'retail', 'rm', 'vat'];
+  const labels = { raw: 'Raw material ' + '<span class="tag t-e">EST</span>', fill: 'Filling / processing / packing', pack: 'Packaging material', print: 'Label / printing', qc: 'Quality control', carton: 'Outer carton / shrink', inbound: 'Factory → warehouse transport', handling: 'Warehouse handling', dist: 'Distribution to retailer', loss: 'Damages & returns provision %', retail: 'Target shelf price incl. VAT', rm: 'Retailer front margin %', vat: 'VAT %' };
+  const rows = editable.map(k => `<tr><td>${labels[k]}</td>${SKUS.map((s, i) => `<td class="n"><input type="number" step="${k === 'retail' ? 0.5 : 0.05}" value="${s[k]}" data-sku="${i}" data-k="${k}" aria-label="${s.name} ${k}"></td>`).join('')}</tr>`);
+  const calc = SKUS.map(s => ue(s));
+  const out = [
+    ['Fully landed unit cost', c => fmt(c.landed, 2), 'tot'], ['Net retail price (ex VAT)', c => fmt(c.netRetail, 2)], ['Wholesale invoice price (ex VAT)', c => fmt(c.invoice, 2)], ['Net wholesale revenue (after rebate)', c => fmt(c.netRev, 2)],
+    ['Gross profit / unit', c => fmt(c.gp, 2)], ['Our gross margin %', c => `<b class="${c.gpPct < 0.08 ? 'conf-L' : c.gpPct < 0.15 ? 'conf-M' : 'conf-H'}">${fmt(c.gpPct * 100, 1)}%</b>`, 'tot'], ['Contribution / unit (after commission)', c => fmt(c.contrib, 2)], ['Contribution margin %', c => fmt(c.contribPct * 100, 1) + '%'],
+    ['Retailer gross margin %', c => fmt(c.retMarginPct * 100, 1) + '%'], ['Customer saving vs brand', (c, s) => (c.saving == null ? '<span class="faint">n/a</span>' : fmt(c.saving * 100, 0) + '% vs ' + s.benchName)]
+  ].map(r => `<tr class="${r[2] || ''}"><td>${r[0]}</td>${calc.map((c, i) => `<td class="n">${r[1](c, SKUS[i])}</td>`).join('')}</tr>`);
+  $('ue-table').innerHTML = `<thead><tr>${head.map((h, i) => `<th class="${i ? 'n' : ''}">${h}</th>`).join('')}</tr></thead><tbody>${rows.join('')}${out.join('')}</tbody>`;
+  $('wf-sku').innerHTML = SKUS.map((s, i) => `<option value="${i}">${s.name}</option>`).join('');
+  $('wf-sku').value = $('wf-sku').dataset.v || 2; renderWF();
+  // sensitivity per SKU
+  const rIdx = [0.85, 1, 1.15], vT = [['Small run', 1.15], ['Base run', 1], ['Large run', 0.9]];
+  $('sens-sku').innerHTML = `<thead><tr><th>SKU</th>${rIdx.map(r => vT.map(v => `<th class="n">Raw ${r === 1 ? 'base' : (r > 1 ? '+15%' : '−15%')} · ${v[0]}</th>`).join('')).join('')}</tr></thead><tbody>${SKUS.map(s => `<tr><td>${s.name}</td>${rIdx.map(r => vT.map(v => { const g = ue(s, { rawIdx: G.rawIdx * r, conv: v[1] }).gpPct; return `<td class="n ${g < 0 ? 'conf-L' : ''}">${fmt(g * 100, 1)}%</td>`; }).join('')).join('')}</tr>`).join('')}</tbody>`;
+}
+function renderWF() {
+  const s = SKUS[$('wf-sku').value]; const c = ue(s); $('wf-sku').dataset.v = $('wf-sku').value;
+  const segs = [['Factory cost (raw + conversion)', c.factory, 'var(--s1)'], ['Logistics + loss', c.logistics + c.lossAmt, 'var(--s2)'], ['Our gross profit', Math.max(0, c.gp), 'var(--s3)'], ['Rebate to retailer', c.invoice - c.netRev, 'var(--s4)'], ['Retailer front margin', c.netRetail - c.invoice, 'var(--s5)'], ['VAT', c.vatAmt, 'var(--s6)']].filter(x => x[1] > 0.005);
+  const T = segs.reduce((a, x) => a + x[1], 0);
+  $('wf').innerHTML = `<div class="wf" role="img" aria-label="Price waterfall for ${s.name}">${segs.map(x => `<span style="flex:${x[1]};background:${x[2]}" title="${x[0]}: EGP ${fmt(x[1], 2)}"></span>`).join('')}</div>
+    <div class="legend">${segs.map(x => `<span><i style="background:${x[2]}"></i>${x[0]} <b class="num">EGP ${fmt(x[1], 2)}</b> (${fmt(x[1] / T * 100, 0)}%)</span>`).join('')}</div>
+    <p class="small">Shelf price <b>EGP ${fmt(s.retail, 2)}</b> incl. VAT ${s.vat}% → wholesale invoice EGP ${fmt(c.invoice, 2)} → our net revenue EGP ${fmt(c.netRev, 2)} → landed cost EGP ${fmt(c.landed, 2)}.${c.gp < 0 ? ' <b class="conf-L">Loss-making at these inputs.</b>' : ''}</p>`;
+}
+
+function renderArch() {
+  const mult = Number($('in-velmult').value) || 1; const dsoO = $('in-dsoarch').value; const A = [['Small chain', 5, 5, 2, 30], ['Regional chain', 20, 8, 3, 60], ['Major retailer', 50, 10, 4, 75], ['National hypermarket / discounter', 100, 12, 5, 90]];
+  const mx = mixAvg();
+  const rows = A.map(a => { const br = a[1], sk = a[2], upd = a[3] * mult, dso = dsoO ? Number(dsoO) : a[4]; const units = br * sk * upd * mx.velAvg * 30; const rev = units * mx.netRev, cogs = units * mx.landed, gp = rev - cogs, cm = units * mx.commission;
+    const acct = 15000 + br * 600; const contrib = gp - cm - acct; const ar = rev * dso / 30, inv = cogs * P.dio / 30, ap = cogs * P.dpo / 30; return { a, br, sk, upd, dso, units, rev, cogs, gp, cm, acct, contrib, wc: ar + inv - ap }; });
+  const line = (l, f) => `<tr><td>${l}</td>${rows.map(r => `<td class="n">${f(r)}</td>`).join('')}</tr>`;
+  $('arch-table').innerHTML = `<thead><tr><th>Monthly (EGP)</th>${rows.map(r => `<th class="n">${r.a[0]}<br><span class="faint">${r.br} branches · hypothetical</span></th>`).join('')}</tr></thead><tbody>
+    ${line('SKUs supplied', r => r.sk)}${line('Units / SKU / branch / day', r => fmt(r.upd, 1))}${line('Monthly units', r => fmt(r.units))}${line('Net wholesale revenue', r => fmt(r.rev))}${line('Cost of goods (landed)', r => fmt(r.cogs))}
+    ${line('Gross profit', r => fmt(r.gp))}${line('Sales commission', r => fmt(r.cm))}${line('Account servicing (merchandising, admin) <span class="tag t-a">A</span>', r => fmt(r.acct))}
+    <tr class="tot"><td>Contribution profit / month</td>${rows.map(r => `<td class="n">${fmt(r.contrib)}</td>`).join('')}</tr>${line('Annual contribution', r => fmt(r.contrib * 12))}
+    ${line('Payment terms (days)', r => r.dso)}${line('Working capital tied up', r => fmt(r.wc))}${line('Contribution ÷ working capital (annual)', r => fmt(r.contrib * 12 / r.wc * 100, 0) + '%')}</tbody>`;
+}
+
+function renderModelInputs() {
+  $('model-inputs').innerHTML = INPUTS.map(([k, l]) => `<label>${l}<input type="number" data-p="${k}" value="${P[k]}" step="${['upd', 'finRate', 'opexGrowth'].includes(k) ? 0.5 : 1}"></label>`).join('');
+  document.querySelectorAll('[data-sc]').forEach(b => b.setAttribute('aria-pressed', b.dataset.sc === SC));
+}
+function renderModel() {
+  const R = runModel(); const rows = R.rows;
+  $('model-kpis').innerHTML = [
+    ['Year-3 revenue', 'EGP ' + M(R.Y[2].rev)], ['Year-3 EBITDA', 'EGP ' + M(R.Y[2].ebitda) + ` (${fmt(R.Y[2].ebitda / R.Y[2].rev * 100, 1)}%)`], ['Peak funding need', 'EGP ' + M(R.peak)], ['First EBITDA-positive month', R.be ? 'Month ' + R.be.m : '> 36'],
+    ['Blended gross margin', fmt((R.netRev - R.landed) / R.netRev * 100, 1) + '%'], ['Break-even volume (yr-3 opex)', fmt(R.beUnits) + ' units/mo'], ['Working capital at M36', 'EGP ' + M(R.last.wc)], ['Cash payback', R.cashBack ? 'Month ' + R.cashBack.m : 'Beyond month 36']
+  ].map(k => `<div class="kpi"><div class="l">${k[0]}</div><div class="v">${k[1]}</div></div>`).join('');
+  $('ch-rev').innerHTML = lineChart([{ name: 'Revenue', color: 'var(--s1)', data: rows.map(r => r.rev) }, { name: 'Gross profit (incl. setup fees)', color: 'var(--s2)', data: rows.map(r => r.gp + r.setupRev) }], { label: 'Monthly revenue and gross profit' });
+  $('ch-ebitda').innerHTML = lineChart([{ name: 'EBITDA', color: 'var(--s3)', bar: true, data: rows.map(r => r.ebitda) }], { label: 'Monthly EBITDA' });
+  $('ch-cash').innerHTML = lineChart([{ name: 'Cumulative cash', color: 'var(--s1)', data: rows.map(r => r.cash) }], { label: 'Cumulative cash before funding' });
+  const Y = R.Y; const L = (l, k, cls) => `<tr class="${cls || ''}"><td>${l}</td>${Y.map(y => `<td class="n">${fmt(typeof k === 'function' ? k(y) : y[k])}</td>`).join('')}</tr>`;
+  $('pl-table').innerHTML = `<thead><tr><th>EGP</th><th class="n">Year 1</th><th class="n">Year 2</th><th class="n">Year 3</th></tr></thead><tbody>${L('Units sold', 'units')}${L('Revenue (product + setup fees)', 'rev')}${L('Cost of goods sold (landed)', 'cogs')}${L('Gross profit', 'gp', 'tot')}
+    <tr><td>Gross margin %</td>${Y.map(y => `<td class="n">${fmt(y.gp / y.rev * 100, 1)}%</td>`).join('')}</tr>${L('Sales commission', 'cm')}${L('Contribution profit', 'contrib')}<tr><td>Contribution margin %</td>${Y.map(y => `<td class="n">${fmt(y.contrib / y.rev * 100, 1)}%</td>`).join('')}</tr>
+    ${L('Fixed operating expenses', 'opex')}${L('EBITDA', 'ebitda', 'tot')}${L('Depreciation / amortisation', 'dep')}${L('Financing cost on WC', 'interest')}${L('Income tax (22.5%)', 'tax')}${L('Net profit', 'ni', 'tot')}${L('Operating cash flow after WC & capex', 'cf')}</tbody>`;
+  const q = [12, 24, 36].map(m => rows[m - 1]);
+  $('wc-table').innerHTML = `<thead><tr><th>EGP</th><th class="n">Month 12</th><th class="n">Month 24</th><th class="n">Month 36</th></tr></thead><tbody>
+    <tr><td>Branches served</td>${q.map(r => `<td class="n">${fmt(r.br)}</td>`).join('')}</tr><tr><td>Receivables (DSO ${P.dso} d)</td>${q.map(r => `<td class="n">${fmt(r.ar)}</td>`).join('')}</tr>
+    <tr><td>Inventory (DIO ${P.dio} d)</td>${q.map(r => `<td class="n">${fmt(r.inv)}</td>`).join('')}</tr><tr><td>Payables (DPO ${P.dpo} d)</td>${q.map(r => `<td class="n">(${fmt(r.ap)})</td>`).join('')}</tr>
+    <tr class="tot"><td>Net working capital</td>${q.map(r => `<td class="n">${fmt(r.wc)}</td>`).join('')}</tr><tr><td>Cash conversion cycle (days)</td>${q.map(() => `<td class="n">${P.dso + P.dio - P.dpo}</td>`).join('')}</tr>
+    <tr><td>Contribution per unit (blended)</td>${q.map(() => `<td class="n">${fmt(R.contribPerUnit, 2)}</td>`).join('')}</tr><tr><td>Return on invested capital (yr-3 NOPAT ÷ peak funding)</td>${q.map((r, i) => `<td class="n">${i === 2 && R.roic != null ? fmt(R.roic * 100, 0) + '%' : ''}</td>`).join('')}</tr></tbody>`;
+  const cases = [['Base inputs', {}], ['Raw materials +10%', { rawIdx: G.rawIdx * 1.1 }], ['Raw materials −10%', { rawIdx: G.rawIdx * 0.9 }], ['Shelf price −5%', { priceIdx: 0.95 }], ['Shelf price +5%', { priceIdx: 1.05 }], ['Volume −20%', { volIdx: 0.8 }], ['Volume +20%', { volIdx: 1.2 }], ['DSO 45 days', { dso: 45 }], ['DSO 120 days', { dso: 120 }]];
+  $('sens-table').innerHTML = `<thead><tr><th>Case</th><th class="n">Year-3 EBITDA</th><th class="n">Δ vs base</th><th class="n">Peak funding</th></tr></thead><tbody>${cases.map(([l, o]) => { const r = runModel(P, o); return `<tr><td>${l}</td><td class="n">${fmt(r.Y[2].ebitda)}</td><td class="n">${fmt(r.Y[2].ebitda - R.Y[2].ebitda)}</td><td class="n">${fmt(r.peak)}</td></tr>`; }).join('')}</tbody>`;
+  $('month-table').innerHTML = `<thead><tr><th>Month</th><th class="n">Branches</th><th class="n">Units</th><th class="n">Revenue</th><th class="n">Gross profit</th><th class="n">Opex</th><th class="n">EBITDA</th><th class="n">Working capital</th><th class="n">Cum. cash</th></tr></thead><tbody>${rows.map(r => `<tr><td>${r.m}</td><td class="n">${fmt(r.br)}</td><td class="n">${fmt(r.units)}</td><td class="n">${fmt(r.rev)}</td><td class="n">${fmt(r.gp + r.setupRev)}</td><td class="n">${fmt(r.opex)}</td><td class="n">${fmt(r.ebitda)}</td><td class="n">${fmt(r.wc)}</td><td class="n">${fmt(r.cash)}</td></tr>`).join('')}</tbody>`;
+  // exec + investor KPIs use BASE scenario regardless of selection
+  const B = runModel({ ...SCEN.base, ...(SC === 'base' ? P : {}) });
+  $('ex-peak').textContent = 'about EGP ' + M(B.peak);
+  $('exec-kpis').innerHTML = [['Home-care gross margin (model)', fmt(Math.min(...SKUS.filter(s => s.vat).map(s => ue(s).gpPct * 100)), 0) + '–' + fmt(Math.max(...SKUS.filter(s => s.vat).map(s => ue(s).gpPct * 100)), 0) + '%'], ['Sugar 1 kg gross margin', fmt(ue(SKUS[0]).gpPct * 100, 1) + '%'], ['Base-case year-3 revenue', 'EGP ' + M(B.Y[2].rev)], ['Base-case peak funding', 'EGP ' + M(B.peak)]]
+    .map(k => `<div class="kpi"><div class="l">${k[0]}</div><div class="v">${k[1]}</div></div>`).join('');
+  const inv = [['Upfront investment', 'EGP ' + M(SCEN.base.capex)], ['Peak funding (incl. WC)', 'EGP ' + M(B.peak)], ['Year-3 revenue', 'EGP ' + M(B.Y[2].rev)], ['Year-3 EBITDA', 'EGP ' + M(B.Y[2].ebitda)], ['Year-3 net profit', 'EGP ' + M(B.Y[2].ni)], ['Cash payback', B.cashBack ? 'Month ' + B.cashBack.m : 'Beyond 36 months'], ['First EBITDA-positive month', B.be ? 'Month ' + B.be.m : '> 36'], ['ROIC (yr-3)', B.roic != null ? fmt(B.roic * 100, 0) + '%' : '—']];
+  $('inv-kpis').innerHTML = inv.map(k => `<div class="kpi"><div class="l">${k[0]}</div><div class="v">${k[1]}</div></div>`).join('');
+  $('inv-extra').innerHTML = `<h3>Priority SKUs and unit economics</h3><div class="tw"><table><thead><tr><th>SKU</th><th class="n">Shelf price</th><th class="n">Landed cost</th><th class="n">Net wholesale</th><th class="n">Our GM %</th><th class="n">Saving vs brand</th></tr></thead><tbody>${SKUS.map(s => { const c = ue(s); return `<tr><td>${s.name}</td><td class="n">${fmt(s.retail, 2)}</td><td class="n">${fmt(c.landed, 2)}</td><td class="n">${fmt(c.netRev, 2)}</td><td class="n">${fmt(c.gpPct * 100, 1)}%</td><td class="n">${c.saving == null ? 'n/a' : fmt(c.saving * 100, 0) + '%'}</td></tr>`; }).join('')}</tbody></table></div><p class="faint">All costs are pre-RFQ estimates; retail references are dated or undated listings (see full report).</p>`;
+  renderScore(); renderEvidence(B);
+}
+function renderScore() {
+  const extra = { sugar: [4, 5, 4, 2, 5, 3, 2], rice: [3, 5, 4, 3, 5, 3, 3], dish1: [4, 4, 5, 4, 4, 4, 5], dish5: [4, 4, 5, 4, 4, 4, 5], laundry: [4, 3, 5, 4, 4, 4, 4], handsoap: [4, 3, 4, 4, 4, 4, 4], bar: [4, 4, 4, 5, 4, 4, 4], floor: [4, 4, 5, 4, 4, 4, 4] };
+  // order: capital, frequency, supplier, priceComp, storage, regulatory, adoption ; plus margin (computed) and leadtime (4 default)
+  const rows = SKUS.map(s => { const g = ue(s).gpPct; const mScore = g < 0.05 ? 1 : g < 0.1 ? 2 : g < 0.15 ? 3 : g < 0.22 ? 4 : 5; const e = extra[s.id] || [3, 3, 3, 3, 3, 3, 3];
+    const lead = s.vat ? 3 : 4; const score = mScore * .25 + e[0] * .10 + e[1] * .15 + e[2] * .10 + e[3] * .15 + e[4] * .05 + e[5] * .05 + lead * .05 + e[6] * .10; return { s, mScore, e, lead, score }; }).sort((a, b) => b.score - a.score);
+  $('sku-score').innerHTML = `<thead><tr><th>Rank</th><th>SKU</th><th class="n">Margin</th><th class="n">Capital</th><th class="n">Frequency</th><th class="n">Supplier</th><th class="n">Price comp.</th><th class="n">Storage</th><th class="n">Regulatory</th><th class="n">Lead time</th><th class="n">Adoption</th><th class="n">Score</th><th>Decision</th></tr></thead><tbody>${rows.map((r, i) => `<tr><td>${i + 1}</td><td><b>${r.s.name}</b></td><td class="n">${r.mScore}</td><td class="n">${r.e[0]}</td><td class="n">${r.e[1]}</td><td class="n">${r.e[2]}</td><td class="n">${r.e[3]}</td><td class="n">${r.e[4]}</td><td class="n">${r.e[5]}</td><td class="n">${r.lead}</td><td class="n">${r.e[6]}</td><td class="n"><b>${r.score.toFixed(2)}</b></td><td>${r.s.id === 'sugar' ? '<span class="pill warn">PLaaS fee-only</span>' : r.s.id === 'rice' ? '<span class="pill warn">Wave 1 price-entry (low margin)</span>' : r.score >= 3.9 ? '<span class="pill ok">Launch wave 1</span>' : r.score >= 3.5 ? '<span class="pill warn">Wave 2</span>' : '<span class="pill bad">Hold</span>'}</td></tr>`).join('')}
+  <tr><td>—</td><td>Cooking oil 1 L · flour · salt</td><td colspan="9" class="small">Not modelled: oil is capital-heavy with a schedule tax and commodity volatility; flour and salt are heavily price-anchored by subsidised or initiative channels.</td><td class="n">—</td><td><span class="pill bad">Not phase 1</span></td></tr>
+  <tr><td>—</td><td>Tissue · kitchen rolls · pasta · lentils</td><td colspan="9" class="small">Strong private-label categories (kitchen rolls EGP 11–18 per roll) but conversion costs not yet estimated; RFQ in Days 1–30.</td><td class="n">—</td><td><span class="pill warn">Wave 2 after RFQ</span></td></tr></tbody>`;
+}
+function renderEvidence(B) {
+  const E = [
+    ['E1', 'BIM stores in Egypt', '445 (end-2025); 418 (end-2024)', 'v', 'H', ref('bim') + ref('bimcorp'), '—'], ['E2', 'Kazyon stores', '>1,000 (22 governorates)', 'r', 'L', ref('kaz'), 'Confirm with company'],
+    ['E3', 'Carrefour Egypt stores', '72 Carrefour (Dec 2025)', 'v', 'H', ref('crf'), '—'], ['E4', 'Small grocers share', '~60%, >US$13 bn', 'r', 'M', ref('usda'), 'Euromonitor 2025 update'],
+    ['E5', 'Sugar packed retail avg', 'EGP 35.68 / kg (16 Nov 2026)', 'v', 'H', ref('sugar'), '—'], ['E6', 'Bulk sugar cost', 'EGP 24,000 / t base (20–21k Jul–Aug; +4k Sep)', 'e', 'M', ref('sugart') + ref('sugart2'), 'Wholesale RFQ (Nov)'],
+    ['E7', 'Rice packed retail avg', 'EGP 32–35 / kg (19–20 Nov 2026)', 'v', 'H', ref('ahram') + ref('twasl'), '—'], ['E8', 'Bulk white rice cost', 'EGP 21,000 / t base (22–24k Jul 2026; easing)', 'e', 'M', ref('ricet') + ref('ricekg'), 'Packer RFQ'],
+    ['E9', 'Branded home-care shelf prices', 'Pril 1 L ~60; Persil 1 L 102.5; Lux 115 g 26', 'r', 'M', ref('pril1l') + ref('persil') + ref('crfsoap'), 'In-store audit (undated listings)'],
+    ['E10', 'Co-man fill and packaging costs', 'See Section 5 per SKU', 'e', 'L', 'Bottom-up estimate', 'RFQ from ≥ 4 co-packers'], ['E11', 'Retailer margin', '10–12% staples, 25% home care', 'a', 'L', 'Analyst assumption', 'Buyer interviews'],
+    ['E12', 'Rebate / back margin', '3% base', 'a', 'L', 'Analyst assumption', 'Buyer interviews'], ['E13', 'Payment terms', 'Contract 30–60 d; actual 60–90+ d', 'r', 'M', ref('allianz'), 'Retailer terms sheets'],
+    ['E14', 'Units / SKU / branch / day', '2 / 3 / 4 by scenario', 'a', 'L', 'Analyst assumption', 'Pilot POS sell-through'], ['E15', 'Financing rate and mix', '23% on 50% of funding (CBE overnight lending 21% + spread); rest equity', 'e', 'M', ref('cbe'), 'Bank offer'],
+    ['E16', 'Inflation (opex growth)', '15% per year (urban CPI 12.7% Oct 2026)', 'e', 'M', ref('infl'), '—'], ['E17', 'VAT treatment', 'Sugar exempt; macaroni exempt except semolina; home care 14%; rice unconfirmed', 'r', 'M', ref('vat') + ref('vat2'), 'Tax adviser (rice, pulses)'],
+    ['E18', 'Fixed opex', 'EGP 310k / month base (team of ~8, office, QC, travel)', 'a', 'M', 'Analyst assumption', 'Budget'], ['E19', 'Upfront investment', 'EGP 0.85 M (setup, development, artwork, registrations)', 'a', 'M', 'Analyst assumption', 'Quotes'],
+    ['E20', 'Base-case peak funding', 'EGP ' + M(B.peak), 'e', 'L', 'Model output', 'Re-run after RFQs and interviews']
+  ];
+  $('ev-table').innerHTML = E.map(e => `<tr><td class="mono">${e[0]}</td><td>${e[1]}</td><td>${e[2]}</td><td>${tag(e[3])}</td><td class="conf-${e[4]}">${e[4]}</td><td>${e[5]}</td><td>${e[6]}</td></tr>`).join('');
+}
+
+function renderAll() { renderUE(); renderArch(); renderModel(); }
+
+/* ============================ EVENTS ============================ */
+document.addEventListener('input', e => {
+  const t = e.target;
+  if (t.dataset.sku !== undefined) { const v = Number(t.value); if (isFinite(v)) { SKUS[t.dataset.sku][t.dataset.k] = v; refreshCalc(t); } }
+  else if (t.dataset.p) { const v = Number(t.value); if (isFinite(v)) { P[t.dataset.p] = v; renderArch(); renderModel(); } }
+  else if (t.id === 'in-rebate' || t.id === 'in-comm' || t.id === 'in-rawidx') { G.rebate = Number($('in-rebate').value) || 0; G.comm = Number($('in-comm').value) || 0; G.rawIdx = Number($('in-rawidx').value) || 1; refreshCalc(t); }
+  else if (t.id === 'in-velmult') renderArch();
+});
+document.addEventListener('change', e => { if (e.target.id === 'wf-sku') renderWF(); if (e.target.id === 'in-dsoarch') renderArch(); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-sc]'); if (!b) return; SC = b.dataset.sc; P = { ...SCEN[SC] }; G.rebate = P.rebate; G.comm = P.comm; G.rawIdx = P.rawIdx; $('in-rebate').value = G.rebate; $('in-comm').value = G.comm; $('in-rawidx').value = G.rawIdx; renderModelInputs(); renderAll(); });
+function refreshCalc(t) { // keep focus: re-render UE table, then restore focus to the same input
+  const sel = t.dataset.sku !== undefined ? `[data-sku="${t.dataset.sku}"][data-k="${t.dataset.k}"]` : '#' + t.id; const pos = t.selectionStart;
+  renderAll(); const el = document.querySelector(sel); if (el && el !== document.activeElement) { el.focus(); try { el.setSelectionRange(pos, pos); } catch (_) { } }
+}
+
+/* ============================ BOOT ============================ */
+if (location.hash === '#investor') document.body.classList.add('investor');
+window.addEventListener('hashchange', () => document.body.classList.toggle('investor', location.hash === '#investor'));
+G.rebate = P.rebate; G.comm = P.comm; G.rawIdx = P.rawIdx; $('in-rebate').value = G.rebate; $('in-comm').value = G.comm; $('in-rawidx').value = G.rawIdx;
+renderStatic(); renderModelInputs(); renderAll();
+</script>
