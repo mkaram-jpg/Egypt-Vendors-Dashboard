@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap">
 <style>
 /* Layout: consulting due-diligence report — one reading column with wide tables in their own scroll boxes; the financial model is an interactive workbench section. */
 :root {
@@ -81,6 +81,8 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .pill.ok { background: var(--ok-soft); color: var(--ok); } .pill.warn { background: var(--warn-soft); color: var(--warn); } .pill.bad { background: var(--bad-soft); color: var(--bad); }
 .small { font-size: .82rem; }
 details summary { cursor: pointer; font-weight: 600; }
+.ar-box { direction: rtl; text-align: right; font-family: "IBM Plex Sans Arabic", var(--f-body); background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; margin: 14px 0; line-height: 1.9; font-size: .95rem; }
+.ar-box b:first-child { display: block; color: var(--accent); margin-bottom: 4px; }
 .foot { margin-top: 26px; font-size: .8rem; color: var(--ink-3); }
 .investor-only { display: none; }
 body.investor .full-only { display: none !important; }
@@ -108,7 +110,7 @@ body.investor .investor-only { display: block; }
   <div class="callout warn" style="margin-top:16px"><b>Read this first: research basis and limits</b>
     This study uses web research run on 21 Nov 2026 through a search engine. Direct page fetching from this research environment was blocked, so every figure below comes from dated search results, official averages reported in the press, or retailer listing snippets. Retailer listing prices are often <b>undated</b> and must be re-checked in store. <b>No supplier quotations were obtained.</b> Every factory cost is a labelled bottom-up estimate that needs an RFQ. Branch counts used in profitability scenarios are hypothetical. Each number carries a tag: <span class="tag t-v">VERIFIED</span> dated primary or official source · <span class="tag t-r">REPORTED</span> press or retailer listing, possibly undated · <span class="tag t-e">ESTIMATE</span> bottom-up calculation · <span class="tag t-a">ASSUMPTION</span> analyst input to validate.</div>
   <nav class="toc full-only noprint" aria-label="Contents">
-    <a href="#exec">Executive summary</a><a href="#s1">1 · Retail landscape</a><a href="#s2">2 · Governorate opportunity</a><a href="#s3">3 · Price benchmark</a><a href="#s4">4 · Manufacturing &amp; sourcing</a><a href="#s5">5 · Unit economics</a><a href="#s6">6 · Commercial strategy</a><a href="#s7">7 · Retailer simulations</a><a href="#s8">8 · Financial model</a><a href="#s9">9 · Global benchmarks</a><a href="#s10">10 · Risks &amp; regulation</a><a href="#s11">11 · Entry plan &amp; 90 days</a><a href="#s12">12 · Investment case</a><a href="#evidence">Evidence register</a><a href="#sources">Sources</a>
+    <a href="#exec">Executive summary</a><a href="#sA">Step 1 · Where to start</a><a href="#sB">Step 2 · Value proposition &amp; competitors</a><a href="#s1">1 · Retail landscape</a><a href="#s2">2 · Governorate opportunity</a><a href="#s3">3 · Price benchmark</a><a href="#s4">4 · Manufacturing &amp; sourcing</a><a href="#s5">5 · Unit economics</a><a href="#s6">6 · Commercial strategy</a><a href="#s7">7 · Retailer simulations</a><a href="#s8">8 · Financial model</a><a href="#s9">9 · Global benchmarks</a><a href="#s10">10 · Risks &amp; regulation</a><a href="#s11">11 · Entry plan &amp; 90 days</a><a href="#s12">12 · Investment case</a><a href="#evidence">Evidence register</a><a href="#sources">Sources</a>
   </nav>
 </header>
 
@@ -130,6 +132,118 @@ body.investor .investor-only { display: block; }
   <div class="callout ok"><b>Conditional GO for a 90-day validation pilot. Not yet a GO for full investment.</b>
     Run a pilot with 2–3 regional chains (5–25 branches each) and 5–6 SKUs, led by home care: dishwashing liquid 1 L and 500 ml, laundry liquid 1 L, floor cleaner 1 L and liquid hand soap 500 ml. Add rice 1 kg as a price-entry staple. Supply sugar only as a fee-based service for retailers that want a price-entry SKU, never as our own-brand margin product. Before committing growth capital, hit the go/no-go criteria in Section 12.</div>
   <div class="investor-only" id="inv-extra"></div>
+</section>
+
+<!-- ===================== A WHERE TO START ===================== -->
+<section class="sec" id="sA">
+  <p class="sec-num">STEP 1</p><h2>Where to start, step by step, before any numbers</h2>
+  <div class="ar-box" lang="ar" dir="rtl"><b>الخلاصة بالمصري</b>
+    نبدأ صغيرين ومركّزين: <b>نوع عميل واحد</b> (سلاسل سوبر ماركت إقليمية من ٥ لـ ٢٥ فرع في القاهرة الكبرى وإسكندرية)، و<b>منتج واحد</b> (سائل غسيل أطباق ١ لتر و٥٠٠ مل)، و<b>منطقة واحدة</b>.
+    قبل أي فلوس: نقعد مع ١٥ صاحب سلسلة، ونلف على ٣٠ محل، ونزور ٦ مصانع، ونعمل عينات واختبار مقارنة مع المنتجات المعروفة. لو العملاء قالوا "أيوه" وطلبوا pilot، ساعتها بس نتكلم في التمويل والتوسع.</div>
+
+  <h3>The beachhead: one customer, one product, one region</h3>
+  <div class="grid g3">
+    <div class="kpi"><div class="l">Customer</div><div class="v" style="font-size:1.1rem">Regional supermarket chains, 5–25 branches</div><div class="l" style="margin-top:6px">They have no private-label team, flexible buyers and owners who decide fast. National chains (Carrefour, BIM) come later as a supplier route.</div></div>
+    <div class="kpi"><div class="l">First product</div><div class="v" style="font-size:1.1rem">Dishwashing liquid, 1 L and 500 ml</div><div class="l" style="margin-top:6px">Bought every week or two, with a simple spec, many co-packers and a big price gap against brands.</div></div>
+    <div class="kpi"><div class="l">Region</div><div class="v" style="font-size:1.1rem">Greater Cairo, then Alexandria</div><div class="l" style="margin-top:6px">Close to the Obour and 10th of Ramadan factories, and has the most regional chains.</div></div>
+  </div>
+
+  <h3>Why dishwashing liquid is the first product to look at</h3>
+  <div class="tw"><table><thead><tr><th>Criterion</th><th>Dishwashing liquid</th><th>Sugar / rice</th><th>Laundry liquid</th><th>Tissue / kitchen rolls</th></tr></thead><tbody>
+    <tr><td>Purchase frequency</td><td><span class="pill ok">Very high</span></td><td><span class="pill ok">Very high</span></td><td><span class="pill warn">Medium</span></td><td><span class="pill ok">High</span></td></tr>
+    <tr><td>Price gap vs brand (room to save the shopper money)</td><td><span class="pill ok">Large (Pril 1 L ~60 EGP)</span></td><td><span class="pill bad">Small (commodity, govt price anchor)</span></td><td><span class="pill ok">Large (Persil 1 L 102.5)</span></td><td><span class="pill warn">Medium</span></td></tr>
+    <tr><td>Spec simplicity</td><td><span class="pill ok">Simple (viscosity, foam, scent, pH range)</span></td><td><span class="pill ok">Simple</span></td><td><span class="pill warn">Medium</span></td><td><span class="pill warn">Medium (ply, sheets, GSM)</span></td></tr>
+    <tr><td>Local co-packers</td><td><span class="pill ok">Many</span></td><td><span class="pill warn">Packers to be found</span></td><td><span class="pill ok">Several</span></td><td><span class="pill warn">Few converters</span></td></tr>
+    <tr><td>Regulatory complexity</td><td><span class="pill ok">Lower than food</span></td><td><span class="pill warn">Food rules (NFSA)</span></td><td><span class="pill ok">Lower than food</span></td><td><span class="pill ok">Low</span></td></tr>
+    <tr><td>Shelf life and storage</td><td><span class="pill ok">Long, easy</span></td><td><span class="pill warn">Pests, humidity</span></td><td><span class="pill ok">Long</span></td><td><span class="pill warn">Bulky</span></td></tr>
+    <tr><td>Easy for a shopper to try</td><td><span class="pill ok">Yes, low price</span></td><td><span class="pill ok">Yes</span></td><td><span class="pill warn">Higher price</span></td><td><span class="pill ok">Yes</span></td></tr>
+    <tr class="tot"><td>Verdict</td><td>Start here</td><td>Price-entry add-on later</td><td>Second product</td><td>Third, after an RFQ</td></tr>
+  </tbody></table></div>
+  <p class="small muted">Product ladder after dishwashing liquid: floor and multipurpose cleaner → laundry liquid → liquid hand soap → bar soap → rice 1 kg (traffic builder) → tissue and kitchen rolls → pasta and lentils.</p>
+
+  <h3>The step-by-step plan (about 14 weeks)</h3>
+  <div class="tw"><table><thead><tr><th>#</th><th>Step</th><th>What you actually do</th><th>Output that proves it worked</th></tr></thead><tbody>
+    <tr><td>1</td><td><b>Define the beachhead</b> (week 1)</td><td>Write down the customer, product and region above. List 30 target regional chains and 10 candidate co-packers.</td><td>A target list with an owner or buyer name and phone number for each</td></tr>
+    <tr><td>2</td><td><b>Talk to customers</b> (weeks 1–4)</td><td>15 interviews with chain owners and buyers. Ask: do you want your own label? Which categories? Which pain is biggest (margin, brand price rises, stock-outs)? Who decides? What terms and margins do you expect?</td><td>At least 8 of 15 say "yes, show me samples"; top 3 categories ranked by them</td></tr>
+    <tr><td>3</td><td><b>Walk the shelves</b> (weeks 2–4)</td><td>Visit 30 stores across the target chains, discounters and independents. Photograph the dishwashing shelf and record brands, sizes, prices and facings.</td><td>A dated price and facings sheet that replaces the undated listings in this study</td></tr>
+    <tr><td>4</td><td><b>Find makers</b> (weeks 3–6)</td><td>Visit 6 co-packers. Check licences, cleanliness, filling lines and MOQ. Ask for 3 quality tiers of samples and their COA documents.</td><td>3 co-packers you would trust, with samples and written MOQs</td></tr>
+    <tr><td>5</td><td><b>Build the offer</b> (weeks 5–7)</td><td>One spec sheet, 3 label designs per chain from the Brand Studio, a sample kit and a one-page proposal: "your label, 25–35% below the brand, about 25% margin for you".</td><td>A pitch kit a chain owner can hold</td></tr>
+    <tr><td>6</td><td><b>Prove quality</b> (weeks 6–8)</td><td>Blind test against Pril and Fairy with about 50 shoppers and store staff (grease cleaning, foam, smell, thickness). Keep the golden sample.</td><td>Our product rated at least equal on the main attributes by most testers</td></tr>
+    <tr><td>7</td><td><b>Sign a small pilot</b> (weeks 8–10)</td><td>A letter of intent with 1–2 chains: 5–10 branches, one SKU in 2 sizes, agreed price, payment ≤ 60 days. Pool both chains' orders to reach the factory MOQ.</td><td>Signed LOI and first purchase order</td></tr>
+    <tr><td>8</td><td><b>Run and watch</b> (weeks 10–14)</td><td>Weekly sell-through, out-of-stocks, shopper comments and reorders.</td><td>Reorder from the chain → add products and chains. No reorder → fix or stop.</td></tr>
+  </tbody></table></div>
+  <div class="callout warn"><b>What not to do first</b>Don't build a factory. Don't launch 20 SKUs. Don't start with national chains. Don't sell sugar as our own-brand margin product. Don't build an expensive app before the manual (concierge) pilot shows customers want this. The prototype is a sales and demo tool for now.</div>
+</section>
+
+<!-- ===================== B VALUE PROPOSITION & COMPETITION ===================== -->
+<section class="sec" id="sB" data-tpl>
+  <p class="sec-num">STEP 2</p><h2>Value proposition, what makes us different, and who we compete with</h2>
+  <div class="ar-box" lang="ar" dir="rtl"><b>الخلاصة بالمصري</b>
+    إحنا مش مصنع ومش دليل موردين. إحنا <b>شريك البراند الخاص</b>: بنصمم المنتج، ونختار مصنع متراجع، ونختبر الجودة، ونطبع اسم السلسلة، ونوصّل للمحل.
+    أهم حاجة بتميزنا إننا <b>بنجمع طلبات كذا سلسلة صغيرة مع بعض</b> عشان يوصلوا للحد الأدنى بتاع المصنع. ده حاجة السلسلة الصغيرة متقدرش تعملها لوحدها، وكارفور وبيم عاملينها لنفسهم بس.
+    المنافسين الحقيقيين: فريق البراند الخاص في السلاسل الكبيرة، والمصانع اللي بتبيع للسلاسل مباشرة، ومنصات الجملة زي MaxAB-Wasoko وكارتونة. وبره مصر أقرب نموذج لينا شركة Daymon في أمريكا (للسلاسل) وPietra (لأصحاب البراندات الجديدة).</div>
+
+  <h3>Value proposition</h3>
+  <div class="grid g2">
+    <div class="kpi"><div class="l">For regional retail chains (launch customer)</div><div class="v" style="font-size:1.05rem;line-height:1.35">"Your own label, without a factory or a team. We design, source from audited Egyptian factories, test and deliver. You get a product 25–35% cheaper than the brand and a better margin."</div></div>
+    <div class="kpi"><div class="l">For new brand founders (second customer)</div><div class="v" style="font-size:1.05rem;line-height:1.35">"From idea to product on the shelf: a clear spec, vetted makers, quotes you can compare, a sample you approve, and production you can follow."</div></div>
+  </div>
+  <div class="tw"><table><thead><tr><th>Customer job</th><th>Pain today</th><th>How we relieve it</th><th>Gain we create</th></tr></thead><tbody>
+    <tr><td>Grow margin on basic categories</td><td>Brand price rises squeeze margin; promotions are funded by brands on their terms</td><td>Own label priced below the brand, with a target retailer margin of about 25% (to validate)</td><td>Higher category margin and a reason for shoppers to come back</td></tr>
+    <tr><td>Launch own label</td><td>No sourcing, QC or design team; factory MOQs too high for one small chain</td><td><b>Demand pooling</b> across chains; turnkey specs, artwork and testing</td><td>Own label in about 8–10 weeks, at small-chain volumes</td></tr>
+    <tr><td>Trust the product</td><td>Fear of bad batches and no recourse</td><td>Factory audit, approved golden sample, batch COA, documented checks</td><td>A record that settles quality disputes</td></tr>
+    <tr><td>Keep shelves full</td><td>Unreliable small suppliers</td><td>Dual-sourcing of top SKUs, forecasts and production tracking</td><td>Fewer stock-outs</td></tr>
+    <tr><td>Know what works</td><td>No sell-through insight</td><td>Simple sell-through dashboard per SKU and branch</td><td>Data to cut losers and add winners</td></tr>
+  </tbody></table></div>
+
+  <h3>What makes us different</h3>
+  <ol>
+    <li><b>Demand pooling for small chains.</b> We combine orders from several regional chains, each with its own label, into one factory run. It's the main thing a single small chain cannot do alone.</li>
+    <li><b>Managed, not a directory.</b> We own the spec, QC and delivery. The lesson from Zetwerk in India is that a pure marketplace did not work for manufacturing, so it moved to a managed model.</li>
+    <li><b>Comparable quotes.</b> Quotes are normalised to the same quantity and the same VAT basis (built into the prototype). Brokers and Facebook groups don't do this.</li>
+    <li><b>Category-specific spec builders</b> (nuts, cleaning, furniture and more) in Arabic and English, so requests arrive complete.</li>
+    <li><b>Design in days.</b> The Brand Studio shows a chain its label on the product before any money is spent.</li>
+    <li><b>Transparent economics.</b> Each retailer sees its cost, price and margin per SKU, with no hidden mark-ups.</li>
+    <li><b>Egypt-first compliance.</b> Arabic labels, NFSA-licensed packers for food, and VAT handled per SKU.</li>
+  </ol>
+
+  <h3>Competitors in Egypt and the region: strengths, weaknesses, our angle</h3>
+  <div class="tw"><table><thead><tr><th>Competitor (type)</th><th>What they do</th><th>Strengths</th><th>Weaknesses / gaps</th><th>Threat</th><th>Our angle</th></tr></thead><tbody>
+    <tr><td><b>Big chains' in-house private label</b> (Carrefour/MAF, BIM, Kazyon)</td><td>Develop own labels for their own stores; Carrefour Egypt planned 1,000+ private-label SKUs in 2024 ${ref('crfpl')}</td><td>Scale, shopper data, shelf control</td><td>Serve only themselves; regional chains can't copy them</td><td><span class="pill warn">Medium</span></td><td>Serve the chains without such teams; later act as a qualified supplier to the big ones</td></tr>
+    <tr><td><b>Co-packers selling direct</b> (ADCO, Scitra, Greenline, ECC, Lulwa, Chemist for Trading)</td><td>Make products under others' labels ${ref('adco')} ${ref('scitra')} ${ref('almaal')}</td><td>Production know-how, lowest unit cost</td><td>High MOQ, no design or retail support, single category, uneven quality systems</td><td><span class="pill warn">Medium</span></td><td>Partner, don't fight: we bring pooled volume and paying retailers; they make</td></tr>
+    <tr><td><b>B2B grocery platforms</b> (MaxAB-Wasoko, Fatura, Cartona)</td><td>Distribute FMCG to small grocers. MaxAB-Wasoko reaches 450,000+ merchants in 8 countries ${ref('maxab')} and bought Fatura in 2025 ${ref('fatura')}; Cartona serves about 188,000 retailers in 17 cities ${ref('cartona')}</td><td>Huge reach into traditional trade; logistics</td><td>Thin distribution margins; built around brands, not product development</td><td><span class="pill bad">High if they launch own labels</span></td><td>Use them as a channel to the ~60% traditional trade for our products</td></tr>
+    <tr><td><b>Social commerce</b> (Brimore)</td><td>Reseller network selling mostly unknown brands (about 95%); dropped own manufacturing as too asset-heavy ${ref('brimore')}</td><td>Rural reach; 75,000 sellers (2021–22 data)</td><td>Not a product-development partner</td><td><span class="pill ok">Low</span></td><td>Possible channel; their pivot confirms "don't build factories"</td></tr>
+    <tr><td><b>Alibaba.com OEM</b> (import route)</td><td>Overseas factories customise products; Trade Assurance escrow ${ref('alibaba')}</td><td>Endless suppliers, payment protection</td><td>Customs, FX, 6–8+ week lead times, 1,000–3,000 unit MOQs, no Arabic labelling or local QC</td><td><span class="pill warn">Medium for non-food</span></td><td>Local, fast, compliant; our MOQs are pooled</td></tr>
+    <tr><td><b>Brokers, agents, Facebook groups</b></td><td>Informal introductions to factories</td><td>Cheap, personal relationships</td><td>No comparable quotes, no QC, no records, no accountability</td><td><span class="pill warn">Medium</span></td><td>Structure, a quality record and transparency</td></tr>
+  </tbody></table></div>
+
+  <h3>Who does this worldwide, and what exactly they do</h3>
+  <div class="tw"><table><thead><tr><th>Company (country)</th><th>Model</th><th>What exactly they do</th><th>Copy</th><th>Avoid</th></tr></thead><tbody>
+    <tr><td><b>Daymon Worldwide</b> (USA)</td><td>Private-brand agency for retailers, the closest to our PLaaS line</td><td>Private-brand strategy, analytics, product development, supplier selection and management, design and packaging; teams work alongside the retailer's buyers ${ref('daymon')}</td><td>Full-service model; a programme assessment as the entry product</td><td>Heavy consulting cost structure for small chains</td></tr>
+    <tr><td><b>Pietra</b> (USA)</td><td>Platform for founders and creators, the closest to our marketplace line</td><td>Sourcing marketplace with 500+ vetted manufacturers in 25 categories; samples, 3PL fulfilment and sales tools ${ref('pietra')}</td><td>Vetted-supplier rules; bundling fulfilment</td><td>Pure self-serve: we need managed help in Egypt</td></tr>
+    <tr><td><b>Sourcify / Anvyl</b> (USA)</td><td>Managed sourcing and production tracking</td><td>Find factories, manage orders and track production; Sourcify reportedly charges a $500 fee plus 1–10% of order cost (one source) ${ref('sourcify')}</td><td>Fee per project plus commission</td><td>Depending on overseas factories</td></tr>
+    <tr><td><b>Blanka, Supliful</b> (Canada / USA)</td><td>Ready private-label catalogue, no MOQ</td><td>Founders pick existing products and add their own label; the platform makes and ships. Blanka has 300+ beauty products ${ref('blanka')}</td><td>"Pick from a catalogue" for fast first orders</td><td>Narrow categories; online-only buyers</td></tr>
+    <tr><td><b>Zetwerk</b> (India)</td><td>Managed marketplace for contract manufacturing</td><td>Connects 2,000+ customers with 10,000+ suppliers; moved from a pure marketplace to a managed model ${ref('zetwerk')}</td><td>Owning quality and delivery</td><td>Becoming capital-heavy too early</td></tr>
+    <tr><td><b>Udaan</b> (India)</td><td>B2B platform creating exclusive brands with small makers</td><td>Built 20+ exclusive apparel brands with small garment makers (2021) ${ref('udaan')}</td><td>Exclusive labels sold through a B2B channel</td><td>Over-expansion</td></tr>
+    <tr><td><b>Tradeling</b> (UAE)</td><td>MENA B2B marketplace</td><td>1M+ products; RFQs, logistics, inspection, financing and private-label support ${ref('tradeling')}</td><td>Inspection and financing add-ons</td><td>Catalogue breadth without depth</td></tr>
+  </tbody></table></div>
+
+  <h3>Our strengths, weaknesses, and what we add</h3>
+  <div class="grid g2">
+    <div class="kpi"><div class="l"><b>Strengths</b></div><ul class="small"><li>Asset-light; local factories nearby</li><li>Demand pooling for small chains</li><li>Working prototype: spec builders, quote comparison, brand studio</li><li>Arabic-first, Egypt compliance focus</li></ul></div>
+    <div class="kpi"><div class="l"><b>Weaknesses</b></div><ul class="small"><li>No track record or references yet</li><li>Working capital heavy if we hold stock and receivables</li><li>Dependence on a few co-packers at the start</li><li>Unvalidated assumptions on margins and payment terms</li></ul></div>
+    <div class="kpi"><div class="l"><b>Opportunities</b></div><ul class="small"><li>Discount chains expanding fast (BIM targets 1,000 stores)</li><li>Shoppers trading down amid inflation</li><li>~60% traditional trade reachable through B2B platforms</li><li>Gulf export through co-packers that already export</li></ul></div>
+    <div class="kpi"><div class="l"><b>Threats</b></div><ul class="small"><li>B2B platforms or co-packers launching their own labels</li><li>Brands cutting prices to defend share</li><li>Retailers paying late</li><li>Input-cost and FX shocks</li></ul></div>
+  </div>
+  <h3>What we can add that nobody in Egypt offers today</h3>
+  <ul>
+    <li><b>Pooled MOQ programme:</b> several chains, one run, separate labels.</li>
+    <li><b>Price-review clause tied to an input index</b> so neither side loses on commodity swings.</li>
+    <li><b>Quality record per batch</b> (golden sample, COA, photos), shared with the retailer.</li>
+    <li><b>Ready label templates</b> from the Brand Studio, in Arabic and English.</li>
+    <li><b>Sell-through dashboard</b> for each chain, which turns us from a supplier into a partner.</li>
+    <li><b>Financing partner (later):</b> invoice factoring so chains can keep their terms while we get paid faster.</li>
+  </ul>
 </section>
 
 <!-- ===================== 1 RETAIL LANDSCAPE ===================== -->
@@ -411,6 +525,19 @@ const SRC = {
   rabo: ['Rabobank private-label outlook (ESM Magazine)', 'https://www.esmmagazine.com/private-label/structural-shifts-drive-long-term-private-label-growth-rabobank-321008'],
   mck: ['McKinsey — State of grocery retail MENA 2026', 'https://www.mckinsey.com/ao/en/our-insights/state-of-grocery-retail-mena-2026-managing-the-growth-paradox'],
   niq: ['Nielsen private label Egypt deck (2018 data)', 'https://cdn.asp.events/CLIENT_Dubai_Wo_4B15F265_5056_B739_54F3125D47F0BC95/sites/Private-Label/media/PDF%27s/Onur-Yuksel-Nielsen.pdf'],
+  daymon: ['Daymon — retailer private brand services', 'https://daymon.com/retailer-brand-services/'],
+  pietra: ['Pietra — what is Pietra', 'https://www.pietrastudio.com/blog/product/what-is-pietra'],
+  sourcify: ['Anvyl vs Sourcify comparison (Mirror, opinion piece)', 'https://mirror.xyz/0xF1CDBdAF9849959de3B6EDe5012a52AA4aef2db7/Wp0ok3bP1r2MDPe49t0a3cO0AS2V7zL7-Ll6PrIrnQA'],
+  blanka: ['Blanka raises $2M (Beauty Independent)', 'https://www.beautyindependent.com/private-label-beauty-platform-blanka-raises-2m/'],
+  zetwerk: ['Zetwerk managed manufacturing marketplace (Seed to Scale)', 'https://seedtoscale.com/blog/how-zetwerk-is-changing-products-sourcing-in-the-global-manufacturing-industry'],
+  udaan: ['Udaan exclusive brands with garment makers (Business Standard, 2021)', 'https://business-standard.com/article/companies/udaan-aims-to-have-100-exclusive-brands-in-tie-up-with-small-garment-makers-121110801576_1.html'],
+  tradeling: ['Tradeling one-stop B2B services (Danish Trade Council)', 'https://um.dk/trade-council/indsigter/markedsnyheder/nye-muligheder-for-e-eksport-til-de-forenede-arabiske-emirater/'],
+  maxab: ['Wasoko and MaxAB complete merger (TechCrunch, Aug 2024)', 'https://techcrunch.com/2024/08/27/wasoko-maxab-complete-merger'],
+  fatura: ['MaxAB-Wasoko acquires Fatura (TechCabal)', 'https://techcabal.com/?p=158548'],
+  cartona: ['Cartona raises $8.1M (TechCrunch, Jul 2024)', 'https://techcrunch.com/2024/07/30/egypts-cartona-raises-8-1m-even-as-investors-pull-back-from-b2b-e-commerce-in-africa'],
+  brimore: ['Brimore model and pivot (The National)', 'https://thenationalnews.com/business/2021/11/14/generation-start-up-how-egypts-brimore-generates-income-for-unknown-brands-and-sellers'],
+  alibaba: ['Alibaba.com OEM / Trade Assurance guide (Alibaba seller blog)', 'https://seller.alibaba.com/blogs/2026/southeast-asia/apparel/oem-customization-alibaba-supplier-guide'],
+  almaal: ['Directory of Egyptian detergent factories manufacturing for others (Sona3 Al-Mal)', 'https://almaal.org/?p=159273'],
   think: ['Think Marketing — Egypt and private labels (Nielsen survey)', 'https://thinkmarketingmagazine.com/egypt-represents-0-of-annual-global-sales-of-private-labels/']
 };
 const SRC_KEYS = Object.keys(SRC);
@@ -710,5 +837,6 @@ function refreshCalc(t) { // keep focus: re-render UE table, then restore focus 
 if (location.hash === '#investor') document.body.classList.add('investor');
 window.addEventListener('hashchange', () => document.body.classList.toggle('investor', location.hash === '#investor'));
 G.rebate = P.rebate; G.comm = P.comm; G.rawIdx = P.rawIdx; $('in-rebate').value = G.rebate; $('in-comm').value = G.comm; $('in-rawidx').value = G.rawIdx;
+document.querySelectorAll('[data-tpl]').forEach(el => { el.innerHTML = el.innerHTML.replace(/\$\{ref\('(\w+)'\)\}/g, (_, k) => ref(k)); });
 renderStatic(); renderModelInputs(); renderAll();
 </script>
